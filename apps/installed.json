@@ -2,7 +2,7 @@
   "tools": [
     {
       "id": "task-list",
-      "name": "Task List OS",
+      "name": "Agentic Task List",
       "app": "apps/task-list/",
       "dataFiles": [
         "apps/task-list/data/tasks.json"
@@ -10,7 +10,7 @@
     },
     {
       "id": "pipeline",
-      "name": "Pipeline OS",
+      "name": "Agentic Pipeline",
       "app": "apps/pipeline/",
       "dataFiles": [
         "apps/pipeline/data/pipeline.json"
@@ -18,7 +18,7 @@
     },
     {
       "id": "skill-map",
-      "name": "Skill and Folder Map OS",
+      "name": "Agentic Skill and Folder Map",
       "app": "apps/skill-map/",
       "dataFiles": [
         "apps/skill-map/data/skillmap.json",
@@ -28,7 +28,7 @@
     },
     {
       "id": "proposals",
-      "name": "Proposal Writing OS",
+      "name": "Agentic Proposals",
       "app": "apps/proposals/",
       "dataFiles": [
         "apps/proposals/data/proposals.json"
@@ -36,7 +36,7 @@
     },
     {
       "id": "content",
-      "name": "Content Machine OS",
+      "name": "Agentic Content Machine",
       "app": "apps/content/",
       "media": true,
       "dataFiles": [
@@ -45,7 +45,7 @@
     },
     {
       "id": "money",
-      "name": "Money View OS",
+      "name": "Agentic Money View",
       "app": "apps/money/",
       "dataFiles": [
         "apps/money/data/money.json"
@@ -53,7 +53,7 @@
     },
     {
       "id": "ads",
-      "name": "Ads OS",
+      "name": "Agentic Ads",
       "app": "apps/ads/",
       "media": true,
       "dataFiles": [

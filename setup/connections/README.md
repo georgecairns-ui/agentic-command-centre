@@ -28,8 +28,8 @@ Use `.claude/skills/connect-a-tool/SKILL.md` for the general method (find the ro
 | Calendly | Upcoming bookings in Calendar and People | Claude connector | `calendly.md` |
 | Sage | Nothing for Money View yet; an export can be read in chat when asked | None: no connector in Claude's directory on 29 October 2026 | `sage.md` |
 | Bank feeds | Business bank transactions for Money View, through the accounts app's own bank feed | Switched on inside the accounts app | `bank-feeds.md` |
-| Meta Ads | Ad figures for Ads OS, new campaigns built switched off, and changes you approve in the app (Ads OS only) | Meta's own connection; a downloaded report where there's no connector | `meta-ads.md` |
-| Google Ads | Ad figures for Ads OS (read only) | Google's own connection; a downloaded report where there's no connector | `google-ads.md` |
+| Meta Ads | Ad figures for Agentic Ads, new campaigns built switched off, and changes you approve in the app (Agentic Ads only) | Meta's own connection; a downloaded report where there's no connector | `meta-ads.md` |
+| Google Ads | Ad figures for Agentic Ads (read only) | Google's own connection; a downloaded report where there's no connector | `google-ads.md` |
 | Xero, to put invoices in as drafts (optional, only when the person asks; never offered in setup) | Money View can create a draft invoice for the person to check and send from Xero | Xero's own open source connection, its own guide (not the 6 sections above) | `xero-drafts.md` |
 
 Default for every app: read, and prepare drafts where the app allows. Claude never sends, pays, deletes, posts, cancels or changes anything on the person's behalf unless they ask for that one specific action in that conversation. Record every connection once a real read has worked (see "Recording a connection" below).

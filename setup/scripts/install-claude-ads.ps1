@@ -1,6 +1,6 @@
 # INSTALL CLAUDE ADS (Windows)
 # ----------------------------
-# Adds the claude-ads skills to this folder, for Ads OS to use when it plans and builds campaigns.
+# Adds the claude-ads skills to this folder, for Agentic Ads to use when it plans and builds campaigns.
 # Claude runs this for you during setup; you never need to.
 #   powershell -ExecutionPolicy Bypass -File setup\scripts\install-claude-ads.ps1
 #
@@ -30,7 +30,7 @@ $ZipSha256 = if ($env:CLAUDE_ADS_ZIP_SHA256) { $env:CLAUDE_ADS_ZIP_SHA256 } else
 $ZipUrl = if ($env:CLAUDE_ADS_ZIP_URL) { $env:CLAUDE_ADS_ZIP_URL } else { "$ForkUrl/archive/refs/tags/$Tag.zip" }
 
 $Kit = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
-$Work = Join-Path ([IO.Path]::GetTempPath()) ('ads-os-claude-ads-' + [guid]::NewGuid().ToString('N').Substring(0, 8))
+$Work = Join-Path ([IO.Path]::GetTempPath()) ('agentic-ads-claude-ads-' + [guid]::NewGuid().ToString('N').Substring(0, 8))
 New-Item -ItemType Directory -Path $Work | Out-Null
 
 function Stop-Install([string]$Why) {
@@ -110,9 +110,9 @@ try {
 
     $today = Get-Date -Format 'yyyy-MM-dd'
     $note = @"
-# Installed by Ads OS
+# Installed by Agentic Ads
 
-These claude-ads skills and agents were added to this folder by Ads OS during setup.
+These claude-ads skills and agents were added to this folder by Agentic Ads during setup.
 
 - Made by: AgriciDaniel, $UpstreamUrl
 - Installed from: $ForkUrl

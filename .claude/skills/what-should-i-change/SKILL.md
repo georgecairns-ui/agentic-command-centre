@@ -1,6 +1,6 @@
 ---
 name: what-should-i-change
-description: Looks at how the ads are doing in Ads OS and adds up to 5 suggestions for changes worth making - pause this, move budget there, test this headline, tighten this audience, fix this landing page - each with a plain reason. Never makes a change itself and never touches an ad account: approved suggestions go to the owner (and Task List OS when attached). On Meta, an approved pause or budget suggestion becomes an account change only when the owner presses the button in the app and confirms it. Use when they press What should I change?, or say "what should I change", "what's wasting money", "any suggestions", "what would you do with my ads", "should I pause anything" or "where should the budget go".
+description: Looks at how the ads are doing in Agentic Ads and adds up to 5 suggestions for changes worth making - pause this, move budget there, test this headline, tighten this audience, fix this landing page - each with a plain reason. Never makes a change itself and never touches an ad account: approved suggestions go to the owner (and Agentic Task List when attached). On Meta, an approved pause or budget suggestion becomes an account change only when the owner presses the button in the app and confirms it. Use when they press What should I change?, or say "what should I change", "what's wasting money", "any suggestions", "what would you do with my ads", "should I pause anything" or "where should the budget go".
 ---
 
 # What should I change
@@ -31,7 +31,7 @@ If there are fewer than 7 days of figures, or the report says "too early", say s
 3. Be careful about the evidence. Don't suggest pausing on a number that is a few days old, on fewer than 7 days of figures, or on a target the owner set recently. Don't compare Google to Meta. They count a result differently, so each is judged against its own target. If you can't tell, the suggestion is to wait, and say that.
 4. Keep every suggestion within `settings.dailyCap`, `weeklyCap` and `monthlyBudget`. Never suggest spending more than the room.
 5. Add each as `{ id, kind, platform, campaignId, title, why, status: "new", createdAt, decidedAt: null, taskId: null }` with a `g-` id. `kind` is one of `pause`, `budget`, `test`, `words`, `audience`, `landing` or `other`. `title` is something the owner can do ("Pause the summer whitening ad"), written so the owner can tell which platform it is on from `platform`. `why` is 1 or 2 plain sentences, quoting only numbers the report printed. `campaignId` is the id in this file (empty for something that isn't about one campaign).
-6. **Task List OS (only if attached).** For every suggestion with status `approved` and no `taskId`, add a suggested task following `apps/ads/ATTACH-CLAUDE.md`, and set its `taskId`. Check first that it isn't there already. Never remove or edit a task.
+6. **Agentic Task List (only if attached).** For every suggestion with status `approved` and no `taskId`, add a suggested task following `apps/ads/ATTACH-CLAUDE.md`, and set its `taskId`. Check first that it isn't there already. Never remove or edit a task.
 7. Add a line at the front of `activity` ("Added 3 suggestions"), keeping no more than 200. Save safely: read the file right before writing, write the whole file back, then read it back and check it parses. Change nothing else.
 
 ## What to say back

@@ -17,9 +17,9 @@ One run keeps every tool up to date. It runs a few times a day, at the times the
 
 In this order, because each one uses what the one before found:
 
-1. **Task List OS:** `.claude/skills/check-in` (calendar, new email, new calls, the plan for today). It reads the inbox and the calls once, for every tool.
-2. **Pipeline OS:** `.claude/skills/pipeline-check-in`, using the emails and calls step 1 has just read rather than reading them again.
-3. **Proposal Writing OS:** `.claude/skills/proposals-check-in`.
+1. **Agentic Task List:** `.claude/skills/check-in` (calendar, new email, new calls, the plan for today). It reads the inbox and the calls once, for every tool.
+2. **Agentic Pipeline:** `.claude/skills/pipeline-check-in`, using the emails and calls step 1 has just read rather than reading them again.
+3. **Agentic Proposals:** `.claude/skills/proposals-check-in`.
 
 `CLAUDE.md` tells the task list's check-in to run steps 2 and 3 in the same run when those tools are attached. That's the same thing: run each once per check-in, never twice.
 
@@ -27,14 +27,14 @@ In this order, because each one uses what the one before found:
 
 These use more of their Claude allowance and change slowly, so once a day is plenty:
 
-4. **Money View OS:** `.claude/skills/update-my-money-view`. Then anything overdue to chase goes to the task list as a suggestion, by Money View's own rules.
-5. **Ads OS, only when the person asked for this check-in:** `.claude/skills/update-my-ads`, read only. Anything waiting on them goes to the task list as a suggestion, by Ads OS's own rules. Never switch on, pause or change anything from a check-in. On a scheduled run, skip it: no Meta or Google Ads tool is ever pre-approved, not even one that only reads, so a run while they're away would stop at its first question. Their figures come in when they say "update my ads" or press **Refresh figures**.
-6. **Content Machine OS:** what's due to post today, as suggestions in the task list, by `.claude/skills/content-check-in`'s steps 1 to 6 only: its step 7 (Connections) is done once, for every app, in step 7 below. Write nothing new and post nothing.
-7. **Connections** (`apps/home/data/connections.json`, format in `setup/connections/README.md`, "Recording a connection"): for each row marked `connected` or `needs-attention` that this run hasn't already read from, make one harmless read through its connection. In a scheduled run, skip the Meta Ads and Google Ads rows (keys `meta-ads` and `google-ads`, and any app whose guide in `setup/connections/` says nothing is pre-approved): Ads OS reads ad accounts only when the person asks, so those rows are refreshed then. Leave their status as it is. If it works, set `checked` to today, and a `needs-attention` row back to `connected` with its `note` cleared. If it fails, set it to `needs-attention` with a one-line `note` ("Signed out of Xero"), keep the old `checked`, and add a suggested task: "Reconnect Xero (the Connections page has a Fix it button)". The apps the tools' own check-ins read in steps 1 to 6 they record themselves, by the same rule.
+4. **Agentic Money View:** `.claude/skills/update-my-money-view`. Then anything overdue to chase goes to the task list as a suggestion, by Money View's own rules.
+5. **Agentic Ads, only when the person asked for this check-in:** `.claude/skills/update-my-ads`, read only. Anything waiting on them goes to the task list as a suggestion, by Agentic Ads's own rules. Never switch on, pause or change anything from a check-in. On a scheduled run, skip it: no Meta or Google Ads tool is ever pre-approved, not even one that only reads, so a run while they're away would stop at its first question. Their figures come in when they say "update my ads" or press **Refresh figures**.
+6. **Agentic Content Machine:** what's due to post today, as suggestions in the task list, by `.claude/skills/content-check-in`'s steps 1 to 6 only: its step 7 (Connections) is done once, for every app, in step 7 below. Write nothing new and post nothing.
+7. **Connections** (`apps/home/data/connections.json`, format in `setup/connections/README.md`, "Recording a connection"): for each row marked `connected` or `needs-attention` that this run hasn't already read from, make one harmless read through its connection. In a scheduled run, skip the Meta Ads and Google Ads rows (keys `meta-ads` and `google-ads`, and any app whose guide in `setup/connections/` says nothing is pre-approved): Agentic Ads reads ad accounts only when the person asks, so those rows are refreshed then. Leave their status as it is. If it works, set `checked` to today, and a `needs-attention` row back to `connected` with its `note` cleared. If it fails, set it to `needs-attention` with a one-line `note` ("Signed out of Xero"), keep the old `checked`, and add a suggested task: "Reconnect Xero (the Connections page has a Fix it button)". The apps the tools' own check-ins read in steps 1 to 6 they record themselves, by the same rule.
 8. **Ideas:** if the ideas list has fewer than 3 with status `new`, follow `.claude/skills/whats-next` to add up to 3.
 9. Set `lastDailyRun` in `apps/toolkit/data/toolkit.json` to today.
 
-Skill and Folder Map OS doesn't check in: it scans when they press Scan again or say "scan my skills". Content Machine OS plans new weeks when they say "plan my content". Neither gets a scheduled task of its own in this folder, and nor does any other tool: this check-in is the only one.
+Agentic Skill and Folder Map doesn't check in: it scans when they press Scan again or say "scan my skills". Agentic Content Machine plans new weeks when they say "plan my content". Neither gets a scheduled task of its own in this folder, and nor does any other tool: this check-in is the only one.
 
 ## Rules
 

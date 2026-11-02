@@ -1,5 +1,5 @@
 /*
-  MODEL: the rules of Ads OS, as plain functions
+  MODEL: the rules of Agentic Ads, as plain functions
   ----------------------------------------------
   No screen code in here. The pages, the campaign drawer, report.js and the Home boxes all ask these
   functions, so every number, every traffic light and every warning means the same thing everywhere.
@@ -234,7 +234,7 @@
     const sym = symbol(data);
     return sym + group(r.ratio.toFixed(2)) + " back for every " + sym + "1" + (r.estimated ? " (estimated)" : "");
   }
-  // With Pipeline OS attached: what customers you won (wins) brought in for the spend in the same range.
+  // With Agentic Pipeline attached: what customers you won (wins) brought in for the spend in the same range.
   // null when there are no wins at all, so nothing is claimed for a tool that isn't attached.
   function realReturn(data, range) {
     const wins = data.wins || [];
@@ -1042,7 +1042,7 @@
   // The words typed into Claude Code once the owner has confirmed. Claude Code then asks before each Meta tool call.
   function changePrompt(actions) {
     const list = (actions || []).map(function (a) { return a.id; }).join(", ");
-    return "I have confirmed a change to my Meta ad account in Ads OS. Follow .claude/skills/make-account-change for this action only: " + list + ". " +
+    return "I have confirmed a change to my Meta ad account in Agentic Ads. Follow .claude/skills/make-account-change for this action only: " + list + ". " +
       "Check that the approvals file in apps/ads/data holds my confirmation for it, then run node apps/ads/app/report.js action <id> and refuse if it says BLOCKED. " +
       "Otherwise say what you are about to change, make exactly that one change with the Meta connection (I will approve each call), read it back, and set the action to done with what you read back, or to failed with a plain note. " +
       "Never delete anything, never touch Google Ads, and never make a second change for one action. When a switch-on of a build is done, also set that build to live and record when (switchedOnAt).";

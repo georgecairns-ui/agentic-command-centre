@@ -1,6 +1,6 @@
 ---
 name: how-did-the-ads-do
-description: Writes the short plain-English summary of how the ads did this week in Ads OS - what happened, what worked, what didn't and what to watch - using only the numbers the app itself works out. Saves it as this week's summary, replacing an earlier one for the same week. Never changes anything in an ad account. Use when they press Write this week's summary, or say "how did the ads do", "ads this week", "weekly ads summary", "how are my ads doing", "write up last week's ads" or "what happened with the ads".
+description: Writes the short plain-English summary of how the ads did this week in Agentic Ads - what happened, what worked, what didn't and what to watch - using only the numbers the app itself works out. Saves it as this week's summary, replacing an earlier one for the same week. Never changes anything in an ad account. Use when they press Write this week's summary, or say "how did the ads do", "ads this week", "weekly ads summary", "how are my ads doing", "write up last week's ads" or "what happened with the ads".
 ---
 
 # How did the ads do

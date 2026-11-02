@@ -54,13 +54,13 @@
 
   // The 7 tools, in the sidebar's order. "part" is the heading of the tool's part of START-HERE.md.
   const TOOLS = [
-    { id: "task-list", name: "Task List OS", icon: "checkSquare", what: "Your tasks, inbox and calls in one place." },
-    { id: "pipeline", name: "Pipeline OS", icon: "trendingUp", what: "Every deal, where it's up to and what's next." },
-    { id: "skill-map", name: "Skill and Folder Map OS", icon: "map", what: "A map of your skills and folders, and what to tidy." },
-    { id: "proposals", name: "Proposal Writing OS", icon: "fileText", what: "Proposals written in your words, from your client folders." },
-    { id: "content", name: "Content Machine OS", icon: "megaphone", what: "Your posts planned, written and scored." },
-    { id: "money", name: "Money View OS", icon: "wallet", what: "Your money month by month, and what's coming." },
-    { id: "ads", name: "Ads OS", icon: "barChart", what: "How your ads are doing, and new ones built switched off." }
+    { id: "task-list", name: "Agentic Task List", icon: "checkSquare", what: "Your tasks, inbox and calls in one place." },
+    { id: "pipeline", name: "Agentic Pipeline", icon: "trendingUp", what: "Every deal, where it's up to and what's next." },
+    { id: "skill-map", name: "Agentic Skill and Folder Map", icon: "map", what: "A map of your skills and folders, and what to tidy." },
+    { id: "proposals", name: "Agentic Proposals", icon: "fileText", what: "Proposals written in your words, from your client folders." },
+    { id: "content", name: "Agentic Content Machine", icon: "megaphone", what: "Your posts planned, written and scored." },
+    { id: "money", name: "Agentic Money View", icon: "wallet", what: "Your money month by month, and what's coming." },
+    { id: "ads", name: "Agentic Ads", icon: "barChart", what: "How your ads are doing, and new ones built switched off." }
   ];
 
   // What Next steps suggests connecting. anyOf: any one of these will do. tool: only once that tool is set up or part done.

@@ -8,11 +8,11 @@ Go through their answers in `setup/progress.md` ("Answers from step 1") and put 
 
 | What it is | Apps | What it gives the toolkit | Guide |
 |---|---|---|---|
-| Customers and deals | HubSpot, Pipedrive | Deals come into Pipeline OS; follow-ups and quiet deals become tasks; contacts fill People | `setup/connections/hubspot.md`, `setup/connections/pipedrive.md` |
-| Accounts | Xero, QuickBooks | Money View OS reads invoices, bills and the bank; unpaid invoices become tasks to chase | `setup/connections/xero.md`, `setup/connections/quickbooks.md` |
+| Customers and deals | HubSpot, Pipedrive | Deals come into Agentic Pipeline; follow-ups and quiet deals become tasks; contacts fill People | `setup/connections/hubspot.md`, `setup/connections/pipedrive.md` |
+| Accounts | Xero, QuickBooks | Agentic Money View reads invoices, bills and the bank; unpaid invoices become tasks to chase | `setup/connections/xero.md`, `setup/connections/quickbooks.md` |
 | Accounts not supported by Money View yet | FreeAgent, Sage | An export still helps the task list; say plainly that Money View can't use it yet | `setup/connections/freeagent.md`, `setup/connections/sage.md` |
 | The business bank | (inside their accounts app) | Money View sees the bank balance and payments; switched on later in Money View's own bank step | `setup/connections/bank-feeds.md` |
-| Ads | Meta, Google | Ads OS reads the figures; on Meta it can build campaigns switched off | `setup/connections/meta-ads.md`, `setup/connections/google-ads.md` |
+| Ads | Meta, Google | Agentic Ads reads the figures; on Meta it can build campaigns switched off | `setup/connections/meta-ads.md`, `setup/connections/google-ads.md` |
 | Payments | Stripe | Failed payments and disputes become tasks | `setup/connections/stripe.md` |
 | Files | Google Drive | Client folders for proposals, documents filed, Meet transcripts | `setup/connections/google-drive.md` |
 | Team chat | Slack | Requests from the team become suggestions | `setup/connections/slack.md` |
@@ -21,7 +21,7 @@ Go through their answers in `setup/progress.md` ("Answers from step 1") and put 
 
 `setup/connections/README.md` lists every guide. If their app isn't listed, follow `.claude/skills/connect-a-tool`.
 
-Social platforms (LinkedIn, Instagram, Facebook, TikTok and so on) wait for Content Machine OS's own platforms step (`setup/content-02-your-platforms.md`), which connects the ones with a connector, for reading only, and says the no-connector sentence once for all the rest. Leave them out of this list.
+Social platforms (LinkedIn, Instagram, Facebook, TikTok and so on) wait for Agentic Content Machine's own platforms step (`setup/content-02-your-platforms.md`), which connects the ones with a connector, for reading only, and says the no-connector sentence once for all the rest. Leave them out of this list.
 
 ## 4.2 Connect each one
 

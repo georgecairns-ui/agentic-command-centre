@@ -1,8 +1,8 @@
 # Step 2 of 7: add the claude-ads skills
 
-Goal: Claude has the claude-ads skills to plan and draft campaigns with. It is a free set of ad-planning skills by AgriciDaniel (MIT licence), and Ads OS installs a tested copy of it into this folder. Nothing is installed anywhere else on the computer.
+Goal: Claude has the claude-ads skills to plan and draft campaigns with. It is a free set of ad-planning skills by AgriciDaniel (MIT licence), and Agentic Ads installs a tested copy of it into this folder. Nothing is installed anywhere else on the computer.
 
-If it fails, or they'd rather skip it, Ads OS still works: Claude uses `.claude/skills/build-a-campaign/references/campaign-basics.md` instead. Say so in one line; setup goes on without the extra skill.
+If it fails, or they'd rather skip it, Agentic Ads still works: Claude uses `.claude/skills/build-a-campaign/references/campaign-basics.md` instead. Say so in one line; setup goes on without the extra skill.
 
 ## 1. Tell them what's about to happen
 

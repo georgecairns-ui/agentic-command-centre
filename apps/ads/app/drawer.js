@@ -269,7 +269,7 @@
         '<input type="file" multiple accept="image/*,video/*" hidden data-media-input data-ad="' + a + '" aria-label="Choose pictures and videos"></div>') +
       '<div data-uploads="' + a + '">' + uploadsHtml(ad.id) + "</div>" +
       (ad.media.length ? '<ul class="mgrid" data-media-grid="' + a + '">' + ad.media.map(function (f, i) { return mediaTile(ad, f, i, locked); }).join("") + "</ul>" +
-        (locked ? "" : '<p class="drawer__small muted">The first one is the cover. Remove only takes it off this ad: the file stays in the media folder inside Ads OS on this computer.</p>') :
+        (locked ? "" : '<p class="drawer__small muted">The first one is the cover. Remove only takes it off this ad: the file stays in the media folder inside Agentic Ads on this computer.</p>') :
         '<p class="drawer__small muted">Nothing added yet. The first picture you add is the cover.</p>') + "</div>";
   }
 
@@ -710,7 +710,7 @@
 
   function sheetPath() {
     const b = buildNow(), path = b.refs.sheet;
-    ui.copyText(path).then(function (ok) { toast(ok ? "Copied the path to the build sheet. Open it from your Small Business Toolkit folder." : "Couldn’t copy. The build sheet is at " + path); });
+    ui.copyText(path).then(function (ok) { toast(ok ? "Copied the path to the build sheet. Open it from your Agentic Command Centre folder." : "Couldn’t copy. The build sheet is at " + path); });
   }
 
   // ---------- Pictures and videos ----------

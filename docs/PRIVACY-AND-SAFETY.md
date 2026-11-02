@@ -4,15 +4,15 @@ Plain answers to the questions people ask before connecting their email.
 
 ## Where is my information kept?
 
-In this folder on your computer, and in the apps you already use. The Small Business Toolkit has no account, no server and no database. Your tasks are one file: `apps/task-list/data/tasks.json`. Claude's notes about your business are in `context/`. You can open, read and edit all of it yourself.
+In this folder on your computer, and in the apps you already use. The Agentic Command Centre has no account, no server and no database. Your tasks are one file: `apps/task-list/data/tasks.json`. Claude's notes about your business are in `context/`. You can open, read and edit all of it yourself.
 
 If this folder sits inside Google Drive, OneDrive or Dropbox, it's backed up there like any other folder. If that folder is shared with other people, they can read your tasks and notes too, so keep it in a private part of your drive.
 
 ## What can Claude do with my email?
 
-Read it, to spot things that need doing, and prepare draft replies for you to check. Claude never replies, forwards, deletes, archives or tidies your email by itself. The one exception is in Pipeline OS: if you agree to it during setup, Claude sends an email you've checked and pressed **Send** on, exactly as you saw it, from your own email. You can turn that off in Pipeline OS's Preferences.
+Read it, to spot things that need doing, and prepare draft replies for you to check. Claude never replies, forwards, deletes, archives or tidies your email by itself. The one exception is in Agentic Pipeline: if you agree to it during setup, Claude sends an email you've checked and pressed **Send** on, exactly as you saw it, from your own email. You can turn that off in Agentic Pipeline's Preferences.
 
-The same goes for your calendar, accounts and other apps: Claude reads and drafts. It doesn't pay, book, post, accept or change anything for you, apart from the few things a tool does when you press its button and confirm: Money View OS puts an invoice into your accounts as a draft, and Ads OS builds a Meta campaign switched off or makes the one change you approved. Nothing ever moves money. If you ever ask it to do one specific thing (for example "add this meeting to my calendar"), it confirms the exact thing first.
+The same goes for your calendar, accounts and other apps: Claude reads and drafts. It doesn't pay, book, post, accept or change anything for you, apart from the few things a tool does when you press its button and confirm: Agentic Money View puts an invoice into your accounts as a draft, and Agentic Ads builds a Meta campaign switched off or makes the one change you approved. Nothing ever moves money. If you ever ask it to do one specific thing (for example "add this meeting to my calendar"), it confirms the exact thing first.
 
 ## What about my call recordings?
 
@@ -40,7 +40,7 @@ When you press Voice note, your browser turns your speech into text as you talk.
 
 ## What is the task list helper?
 
-Your task list app runs from a small program in your Small Business Toolkit folder, so it opens like a web page at http://localhost:4747. It only listens on your own computer: nothing on the internet or your network can reach it. It only shows the app and only ever saves your task file, keeping a backup before every save. Claude can make it start with your computer, and you can turn that off any time by asking Claude.
+Your task list app runs from a small program in your Agentic Command Centre folder, so it opens like a web page at http://localhost:4747. It only listens on your own computer: nothing on the internet or your network can reach it. It only shows the app and only ever saves your task file, keeping a backup before every save. Claude can make it start with your computer, and you can turn that off any time by asking Claude.
 
 ## Does it run when I'm not there?
 
@@ -48,7 +48,7 @@ Only if you choose check-ins during setup; you can skip them. Then the Claude ap
 
 ## Who sees my information?
 
-You, and Claude while you're working with it. Your conversations with Claude are covered by your Claude account's privacy settings, which you can check in the Claude app. Get AI Powers, who made Task List OS, can't see your folder, your tasks or your email.
+You, and Claude while you're working with it. Your conversations with Claude are covered by your Claude account's privacy settings, which you can check in the Claude app. Get AI Powers, who made Agentic Task List, can't see your folder, your tasks or your email.
 
 ## The approve button
 
@@ -58,11 +58,11 @@ Nothing Claude suggests goes on your list until you click Approve. Skip somethin
 
 Every tool in your toolkit has its own page of plain answers, about what it reads and what it may and may not do:
 
-- Pipeline OS: [docs/pipeline/PRIVACY-AND-SAFETY.md](pipeline/PRIVACY-AND-SAFETY.md)
-- Skill and Folder Map OS: [docs/skill-map/PRIVACY-AND-SAFETY.md](skill-map/PRIVACY-AND-SAFETY.md)
-- Proposal Writing OS: [docs/proposals/PRIVACY-AND-SAFETY.md](proposals/PRIVACY-AND-SAFETY.md)
-- Content Machine OS: [docs/content/PRIVACY-AND-SAFETY.md](content/PRIVACY-AND-SAFETY.md)
-- Money View OS: [docs/money/PRIVACY-AND-SAFETY.md](money/PRIVACY-AND-SAFETY.md)
-- Ads OS: [docs/ads/PRIVACY-AND-SAFETY.md](ads/PRIVACY-AND-SAFETY.md)
+- Agentic Pipeline: [docs/pipeline/PRIVACY-AND-SAFETY.md](pipeline/PRIVACY-AND-SAFETY.md)
+- Agentic Skill and Folder Map: [docs/skill-map/PRIVACY-AND-SAFETY.md](skill-map/PRIVACY-AND-SAFETY.md)
+- Agentic Proposals: [docs/proposals/PRIVACY-AND-SAFETY.md](proposals/PRIVACY-AND-SAFETY.md)
+- Agentic Content Machine: [docs/content/PRIVACY-AND-SAFETY.md](content/PRIVACY-AND-SAFETY.md)
+- Agentic Money View: [docs/money/PRIVACY-AND-SAFETY.md](money/PRIVACY-AND-SAFETY.md)
+- Agentic Ads: [docs/ads/PRIVACY-AND-SAFETY.md](ads/PRIVACY-AND-SAFETY.md)
 
 Where a tool's page is stricter than this one, the stricter answer is the one Claude follows for that tool.

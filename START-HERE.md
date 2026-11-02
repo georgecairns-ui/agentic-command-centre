@@ -4,11 +4,11 @@
 
 ---
 
-**Claude, this file is for you.** The person you work for has copied the Small Business Toolkit onto their computer and wants it set up.
+**Claude, this file is for you.** The person you work for has copied the Agentic Command Centre onto their computer and wants it set up.
 
-**If you've only just copied it for them** (you're running in a different folder, such as their home or Documents folder): setup must run from inside the Small Business Toolkit folder, because that's where your skills, permissions and the app live. Copy it as a plain folder, so it's theirs alone and not linked to the copy online. Use the line for their computer:
-  - Mac: `D="$HOME/Documents/Small Business Toolkit"; mkdir -p "$D/setup/as-installed" && curl -fsSL -o "$D/setup/as-installed/small-business-toolkit.tar.gz" https://github.com/georgecairns-ui/small-business-toolkit/archive/refs/heads/main.tar.gz && tar -xzf "$D/setup/as-installed/small-business-toolkit.tar.gz" --strip-components 1 -C "$D"`
-  - Windows (PowerShell): `$d = "$HOME\Documents\Small Business Toolkit"; New-Item -ItemType Directory -Force "$d\setup\as-installed" | Out-Null; curl.exe -fsSL -o "$d\setup\as-installed\small-business-toolkit.tar.gz" https://github.com/georgecairns-ui/small-business-toolkit/archive/refs/heads/main.tar.gz; if ($LASTEXITCODE -eq 0) { tar -xzf "$d\setup\as-installed\small-business-toolkit.tar.gz" --strip-components 1 -C "$d" }`
+**If you've only just copied it for them** (you're running in a different folder, such as their home or Documents folder): setup must run from inside the Agentic Command Centre folder, because that's where your skills, permissions and the app live. Copy it as a plain folder, so it's theirs alone and not linked to the copy online. Use the line for their computer:
+  - Mac: `D="$HOME/Documents/Agentic Command Centre"; mkdir -p "$D/setup/as-installed" && curl -fsSL -o "$D/setup/as-installed/agentic-command-centre.tar.gz" https://github.com/georgecairns-ui/agentic-command-centre/archive/refs/heads/main.tar.gz && tar -xzf "$D/setup/as-installed/agentic-command-centre.tar.gz" --strip-components 1 -C "$D"`
+  - Windows (PowerShell): `$d = "$HOME\Documents\Agentic Command Centre"; New-Item -ItemType Directory -Force "$d\setup\as-installed" | Out-Null; curl.exe -fsSL -o "$d\setup\as-installed\agentic-command-centre.tar.gz" https://github.com/georgecairns-ui/agentic-command-centre/archive/refs/heads/main.tar.gz; if ($LASTEXITCODE -eq 0) { tar -xzf "$d\setup\as-installed\agentic-command-centre.tar.gz" --strip-components 1 -C "$d" }`
 
   If the download fails, check their internet connection and run the line again. Don't try another way in.
 
@@ -16,19 +16,19 @@
 
   If you've already copied it another way (for example with `git clone`, or into a different folder), that's fine: use that folder. Then give them the steps to open it: in the Claude desktop app, open the Code tab, choose that folder, pick "Yes, I trust this folder", then type `/setup`. Stop there; don't start the setup from the wrong folder.
 
-## What the Small Business Toolkit is
+## What the Agentic Command Centre is
 
 All 7 tools from the Get AI Powers small business toolkit, already attached to each other, in one folder with one app and one Claude that runs them all.
 
 | Tool | What you do with it | Its app folder |
 |---|---|---|
-| Task List OS | Read their email, calls and calendar, draft replies, turn it all into tasks, plan their day | `apps/task-list/` |
-| Pipeline OS | Every deal on one board, chases drafted when they're due | `apps/pipeline/` |
-| Proposal Writing OS | A folder per client, proposals written in their brand with their prices | `apps/proposals/` |
-| Content Machine OS | Research, plan, draft and score their posts on one calendar | `apps/content/` |
-| Money View OS | Their money month by month from their accounts, a 12-week forecast, the tax pot | `apps/money/` |
-| Ads OS | Their Google and Meta ads on one plain-English screen, campaigns built for them to approve | `apps/ads/` |
-| Skill and Folder Map OS | Every skill and folder they keep, drawn as 2 maps, with what to tidy | `apps/skill-map/` |
+| Agentic Task List | Read their email, calls and calendar, draft replies, turn it all into tasks, plan their day | `apps/task-list/` |
+| Agentic Pipeline | Every deal on one board, chases drafted when they're due | `apps/pipeline/` |
+| Agentic Proposals | A folder per client, proposals written in their brand with their prices | `apps/proposals/` |
+| Agentic Content Machine | Research, plan, draft and score their posts on one calendar | `apps/content/` |
+| Agentic Money View | Their money month by month from their accounts, a 12-week forecast, the tax pot | `apps/money/` |
+| Agentic Ads | Their Google and Meta ads on one plain-English screen, campaigns built for them to approve | `apps/ads/` |
+| Agentic Skill and Folder Map | Every skill and folder they keep, drawn as 2 maps, with what to tidy | `apps/skill-map/` |
 | Toolkit | Their connections, what's set up, and buttons that hand you new jobs: connect an app, build a page, add a skill, find ideas | `apps/toolkit/` |
 
 It all runs as one app on their computer at **http://localhost:4747**: Home (a dashboard they arrange), then every tool's pages in the sidebar. Each tool's day-to-day rules are in `CLAUDE.md` under "Attached tools". `context/` holds what you know about the business (shared by every tool), `files/` their documents, `.claude/skills/` your saved know-how (they load automatically and work as commands like `/sort-my-day`), and `skills-to-upload/` the skills you build for them, packed up to add to Claude.
@@ -59,7 +59,7 @@ It all runs as one app on their computer at **http://localhost:4747**: Home (a d
 
 **Keep the Toolkit page true.** Whenever you connect, check or lose an app, update its row in `apps/home/data/connections.json` (the format is in `setup/connections/README.md`, "Recording a connection"), and only write `connected` after a real read works. Whenever you finish, part-finish or skip a tool's part, update its entry in `tools` in `apps/toolkit/data/toolkit.json` (the format is in `apps/toolkit/CLAUDE.md`). The person sees both on the Toolkit pages and on Home, with buttons to carry on.
 
-**One check-in for everything.** Step 8 makes the only scheduled task in this folder. When a tool's own steps offer a check-in or a scheduled task of their own (Pipeline OS's check-ins step, Proposal Writing OS's check-in step, or the weekly plan, the money refresh or the weekly scan that Content Machine, Money View and Skill and Folder Map OS offer at their hand-over), don't make it: step 8 covers it.
+**One check-in for everything.** Step 8 makes the only scheduled task in this folder. When a tool's own steps offer a check-in or a scheduled task of their own (Agentic Pipeline's check-ins step, Agentic Proposals's check-in step, or the weekly plan, the money refresh or the weekly scan that Content Machine, Money View and Agentic Skill and Folder Map offer at their hand-over), don't make it: step 8 covers it.
 
 ### Part 1: once, for every tool
 
@@ -75,35 +75,35 @@ It all runs as one app on their computer at **http://localhost:4747**: Home (a d
 
 ### Part 2: each tool, in their order
 
-Run the tools they chose in step 1, in the order they chose. Task List OS and Pipeline OS come first whatever they pick: they take a few minutes, and every other tool sends its actions to the task list. For each tool: tell them in one line what you're about to set up and how long it takes, run its steps in order, then update `tools` in `apps/toolkit/data/toolkit.json` and tick it in `setup/progress.md`. A tool they said can wait gets status `not-yet`; tell them it's on the Toolkit's Set up page with a **Set up now** button whenever they're ready.
+Run the tools they chose in step 1, in the order they chose. Agentic Task List and Agentic Pipeline come first whatever they pick: they take a few minutes, and every other tool sends its actions to the task list. For each tool: tell them in one line what you're about to set up and how long it takes, run its steps in order, then update `tools` in `apps/toolkit/data/toolkit.json` and tick it in `setup/progress.md`. A tool they said can wait gets status `not-yet`; tell them it's on the Toolkit's Set up page with a **Set up now** button whenever they're ready.
 
-**Task List OS** (1 min)
+**Agentic Task List** (1 min)
 - `setup/07-first-run.md`: fill the task list from their real inbox, calls and calendar. Start the app and give them the link now, so they can watch the rest arrive.
 
-**Pipeline OS** (2 min)
+**Agentic Pipeline** (2 min)
 - `setup/pipeline-02-first-run.md`: build the pipeline from the people and deals step 2 found in 30 days of email, their calls and calendar, and check every deal. Skip `setup/pipeline-03-check-ins.md`: step 8 covers it.
 
-**Proposal Writing OS** (12 min)
+**Agentic Proposals** (12 min)
 - `setup/proposals-01-your-brand.md`: only what step 5 didn't cover: the logo version for dark backgrounds, the proposal cover style and the sign-off.
 - `setup/proposals-02-what-you-sell.md`: packages and prices, VAT, payment terms, how they deliver. Draft it from `context/sales.md` and their website first.
 - `setup/proposals-03-your-templates.md`, `setup/proposals-04-your-client-folders.md`, `setup/proposals-05-your-proposal-skill.md`.
 - `setup/proposals-06-first-proposal.md`: a real proposal for their most ready client. Its check-in step isn't run here: step 8 covers every tool's check-in at once.
 
-**Content Machine OS** (20 min)
+**Agentic Content Machine** (20 min)
 - `setup/content-01-your-business.md`: draft everything from `context/` and step 6, and ask only for their themes and voice.
 - `setup/content-02-your-platforms.md`, `setup/content-03-research.md`, `setup/content-04-first-plan.md`.
 
-**Money View OS** (17 min)
+**Agentic Money View** (17 min)
 - `setup/money-01-your-accounts.md`: their accounts software should already be connected from step 4; confirm it with one harmless read. Don't offer Xero draft invoices: that optional extra (`setup/connections/xero-drafts.md`) is only for when they ask.
 - `setup/money-02-your-bank.md`, `setup/money-03-money-out.md`, `setup/money-04-first-view.md`.
 
-**Ads OS** (25 min)
+**Agentic Ads** (25 min)
 - `setup/ads-01-install-claude-ads.md`.
 - `setup/ads-02-where-your-ads-are.md`: their ad accounts should already be connected from step 4; confirm what you can see.
 - `setup/ads-03-your-customer.md`: draft the ideal customer from `context/sales.md` and ask only about their past ads.
 - `setup/ads-04-budget-and-results.md`, `setup/ads-05-first-look.md`.
 
-**Skill and Folder Map OS** (8 min, best last: it maps the skills setup has just built)
+**Agentic Skill and Folder Map** (8 min, best last: it maps the skills setup has just built)
 - `setup/skill-map-01-first-scan.md`, `setup/skill-map-03-map-your-folders.md`, `setup/skill-map-02-group-by-business.md`. Skip its "get to know the business" step: step 5 did it.
 
 ### Part 3: make it run, and hand over
@@ -123,7 +123,7 @@ After each step: tick it in `setup/progress.md` with a one-line note, tell them 
 
 These don't bend, whatever is asked later.
 
-- **Read and draft only, unless a tool's own rules say otherwise.** You read their email, calendar, calls and apps, and prepare drafts. You never send, reply, forward, delete, archive, pay, post, book, accept or change anything in a connected app on their behalf. The few exceptions are each tool's own, written in `CLAUDE.md` under that tool, and each needs the person's yes for that exact change: Pipeline OS sends an email only after they approve it, Money View OS puts an invoice into their accounts as a draft, and Ads OS builds Meta campaigns switched off and makes one approved change at a time. Nothing ever moves money.
+- **Read and draft only, unless a tool's own rules say otherwise.** You read their email, calendar, calls and apps, and prepare drafts. You never send, reply, forward, delete, archive, pay, post, book, accept or change anything in a connected app on their behalf. The few exceptions are each tool's own, written in `CLAUDE.md` under that tool, and each needs the person's yes for that exact change: Agentic Pipeline sends an email only after they approve it, Agentic Money View puts an invoice into their accounts as a draft, and Agentic Ads builds Meta campaigns switched off and makes one approved change at a time. Nothing ever moves money.
 - **You propose, they approve.** Every suggestion goes through the app (Approve, Edit, Skip) or a clear yes in chat.
 - **No passwords or keys in chat or in this folder.** People sign in on each app's own screen, through Claude's Connectors. Setup never uses keys. (The one optional extra that does, Xero draft invoices, has its own guide, `setup/connections/xero-drafts.md`. It is only offered when they ask for it.) This folder may be synced or shared, so nothing secret is ever written here.
 - **Only connect what helps.** Ask before connecting anything. If an app doesn't help any tool they've chosen, say so and leave it.

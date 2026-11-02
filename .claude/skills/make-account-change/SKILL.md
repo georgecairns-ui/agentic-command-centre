@@ -1,6 +1,6 @@
 ---
 name: make-account-change
-description: Makes the one change in the owner's Meta ad account that they approved by pressing a button in Ads OS and confirming it - switch a paused campaign on, pause a campaign or an ad, or change a daily budget. Checks the limits first and refuses if blocked, does only that change, reads it back, and records what it found. Never acts on its own, never goes over their limits, never deletes and never touches Google Ads. Use when the app opens Claude Code on screen with the change they confirmed typed in, or when they say "do the change I approved", "make the change in my account" or "do the switch-on I confirmed".
+description: Makes the one change in the owner's Meta ad account that they approved by pressing a button in Agentic Ads and confirming it - switch a paused campaign on, pause a campaign or an ad, or change a daily budget. Checks the limits first and refuses if blocked, does only that change, reads it back, and records what it found. Never acts on its own, never goes over their limits, never deletes and never touches Google Ads. Use when the app opens Claude Code on screen with the change they confirmed typed in, or when they say "do the change I approved", "make the change in my account" or "do the switch-on I confirmed".
 ---
 
 # Make account change

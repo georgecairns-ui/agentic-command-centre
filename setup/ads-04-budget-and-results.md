@@ -1,6 +1,6 @@
 # Step 5 of 7: your budget and what counts as a result
 
-Goal: Ads OS knows how much they're willing to spend, what a result is, what a result is worth, and what they'd like one to cost. The app uses these for every light, every limit and every warning.
+Goal: Agentic Ads knows how much they're willing to spend, what a result is, what a result is worth, and what they'd like one to cost. The app uses these for every light, every limit and every warning.
 
 You suggest. They decide. Say that once.
 

@@ -51,15 +51,15 @@ Each tool keeps a few of these answers in its own settings. Write them all now, 
 - `apps/skill-map/data/skillmap.json`: `settings.yourName`, `settings.businessName`.
 
 **Files they dropped in**
-- Logo and brand guidelines into `files/04-marketing/brand/`, proposal templates into `files/03-sales/proposals/templates/`. Make the folders if needed. Don't open the templates yet (Proposal Writing OS does that).
+- Logo and brand guidelines into `files/04-marketing/brand/`, proposal templates into `files/03-sales/proposals/templates/`. Make the folders if needed. Don't open the templates yet (Agentic Proposals does that).
 
 **The Toolkit page** (`apps/toolkit/data/toolkit.json`)
 - `tools`: every tool they chose for today as `not-yet` for now, and every tool they said can wait as `not-yet` with the note "Chose to wait". You'll change each to `set-up` as you finish it.
 
 **Connections** (`apps/home/data/connections.json`)
-- Create it if it isn't there, in the format in `setup/connections/README.md` ("Recording a connection"), with one row per app they named, each `"status": "not-connected"` and the note "To connect in setup". Key each row by its guide's file name in `setup/connections/` without `.md` (for an app with no guide, its name in lower case with hyphens). Email and calendar from the same provider share one row (`gmail-and-google-calendar` or `microsoft-365`); from different providers they get a row each, keyed as in step 2's 2.6. Social platforms get their rows in Content Machine OS's platforms step. Only ever set `connected` after a real read works: an app you saw switched on in 1.1 still starts as `not-connected` until its step proves it.
+- Create it if it isn't there, in the format in `setup/connections/README.md` ("Recording a connection"), with one row per app they named, each `"status": "not-connected"` and the note "To connect in setup". Key each row by its guide's file name in `setup/connections/` without `.md` (for an app with no guide, its name in lower case with hyphens). Email and calendar from the same provider share one row (`gmail-and-google-calendar` or `microsoft-365`); from different providers they get a row each, keyed as in step 2's 2.6. Social platforms get their rows in Agentic Content Machine's platforms step. Only ever set `connected` after a real read works: an app you saw switched on in 1.1 still starts as `not-connected` until its step proves it.
 
-Write their chosen order of tools into `setup/progress.md` under "Answers from step 1" as a numbered list, starting with Task List OS and Pipeline OS. Part 2 of setup follows it.
+Write their chosen order of tools into `setup/progress.md` under "Answers from step 1" as a numbered list, starting with Agentic Task List and Agentic Pipeline. Part 2 of setup follows it.
 
 Tick step 1 in `setup/progress.md`.
 

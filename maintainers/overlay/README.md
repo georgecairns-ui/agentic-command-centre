@@ -1,4 +1,4 @@
-# Small Business Toolkit
+# Agentic Command Centre
 
 **Your whole business, run with Claude, in one app.** All 7 tools from the [Get AI Powers](https://getaipowers.com) small business toolkit, already joined up, for clients of Get AI Powers.
 
@@ -10,13 +10,13 @@ Nothing goes out without you. Claude reads and drafts; you decide and you send.
 
 | Tool | What it does for you |
 |---|---|
-| **Task List OS** | Your inbox sorted with replies drafted, your calls written up, your brain dump turned into tasks, and a plan for today. Every other tool's actions land here |
-| **Pipeline OS** | Every deal on one board by stage. Claude spots the chases that are due and drafts each one |
-| **Proposal Writing OS** | A folder per client, and proposals written in your brand with your packages and prices |
-| **Content Machine OS** | Research on what your customers search for, then your posts planned, drafted and scored on one calendar |
-| **Money View OS** | What's invoiced, paid and due, a 12-week forecast and the tax to put aside, from your accounts app. It never moves money |
-| **Ads OS** | Your Google and Meta ads on one plain-English screen, with campaigns built for you to approve |
-| **Skill and Folder Map OS** | Every skill Claude has and every folder you keep, drawn as 2 maps, with what to tidy first |
+| **Agentic Task List** | Your inbox sorted with replies drafted, your calls written up, your brain dump turned into tasks, and a plan for today. Every other tool's actions land here |
+| **Agentic Pipeline** | Every deal on one board by stage. Claude spots the chases that are due and drafts each one |
+| **Agentic Proposals** | A folder per client, and proposals written in your brand with your packages and prices |
+| **Agentic Content Machine** | Research on what your customers search for, then your posts planned, drafted and scored on one calendar |
+| **Agentic Money View** | What's invoiced, paid and due, a 12-week forecast and the tax to put aside, from your accounts app. It never moves money |
+| **Agentic Ads** | Your Google and Meta ads on one plain-English screen, with campaigns built for you to approve |
+| **Agentic Skill and Folder Map** | Every skill Claude has and every folder you keep, drawn as 2 maps, with what to tidy first |
 | **Toolkit** | Your connections, what's set up, and buttons that hand Claude the next job |
 
 ## The Toolkit section
@@ -51,12 +51,12 @@ Doing everything takes about 2 hours. You can stop after any tool: the app works
 
 1. **Open the Claude desktop app and choose the Code tab.** Any folder will do for this first step.
 2. **Ask Claude to fetch the kit.** Paste this:
-   > Copy the Small Business Toolkit from https://github.com/georgecairns-ui/small-business-toolkit into a folder called "Small Business Toolkit" in my Documents, using the copy line in its START-HERE.md (not git), then tell me how to open it and set it up.
+   > Copy the Agentic Command Centre from https://github.com/georgecairns-ui/agentic-command-centre into a folder called "Agentic Command Centre" in my Documents, using the copy line in its START-HERE.md (not git), then tell me how to open it and set it up.
 
    Claude copies everything onto your computer and tells you how to open the new folder. In the desktop app, you choose the folder in the Code tab.
 
-   *For Claude, if this README is all you have:* read START-HERE.md on the repository page at https://github.com/georgecairns-ui/small-business-toolkit, then copy the folder with the Mac or Windows line in it.
-3. **In the Code tab, choose the Small Business Toolkit folder and pick "Yes, I trust this folder".** The first time, the app asks whether you trust the folder and warns that it pre-approves some permissions. Those permissions only let Claude update your app, your business notes and your files folder, search the web and start the app, without stopping to ask each time. It still can't send, delete or change anything in your email or other apps.
+   *For Claude, if this README is all you have:* read START-HERE.md on the repository page at https://github.com/georgecairns-ui/agentic-command-centre, then copy the folder with the Mac or Windows line in it.
+3. **In the Code tab, choose the Agentic Command Centre folder and pick "Yes, I trust this folder".** The first time, the app asks whether you trust the folder and warns that it pre-approves some permissions. Those permissions only let Claude update your app, your business notes and your files folder, search the web and start the app, without stopping to ask each time. It still can't send, delete or change anything in your email or other apps.
 4. **Type `/setup`.**
 
 When it's done, your app is at **http://localhost:4747**. Bookmark it.
@@ -82,4 +82,4 @@ Everything lives in this folder on your computer. Claude reads your apps through
 
 ## Licence
 
-Free to use and change for your own business. Not for resale. See [LICENSE](LICENSE) for the plain-English terms. claude-ads is MIT-licensed and installed separately when you set up Ads OS, with its own licence beside it.
+Free to use and change for your own business. Not for resale. See [LICENSE](LICENSE) for the plain-English terms. claude-ads is MIT-licensed and installed separately when you set up Agentic Ads, with its own licence beside it.

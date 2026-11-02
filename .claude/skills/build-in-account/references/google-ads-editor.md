@@ -52,7 +52,7 @@ Rules for filling it in:
    6. Add the radius around the town, if the build has one (Locations tab, add a location, set the radius). (To check.)
    7. Press **Post** to send it to Google Ads. It arrives paused. (To check.)
 3. **Check it in Google Ads:** open https://ads.google.com/, Campaigns, and check the new campaign says Paused.
-4. **Switch it on** when you're happy: click the status next to the campaign and choose Enabled. Then press "I've switched it on" in Ads OS. (To check.)
+4. **Switch it on** when you're happy: click the status next to the campaign and choose Enabled. Then press "I've switched it on" in Agentic Ads. (To check.)
 5. **Or build the same campaign by hand in Google Ads**, instead of Editor, step by step: Campaigns, the + button, New campaign, choose the goal and Search, the settings from "What's in it", the keywords, the ads, then the budget. Say plainly: in the web version a new campaign is switched on when you publish it, so set the start date to the day you want it to begin, and check the campaign's status afterwards. Pause it yourself straight away if you want to look first. (To check each click and that behaviour.)
 6. **If something looks wrong**, don't switch it on. Tell Claude what you see.
 
