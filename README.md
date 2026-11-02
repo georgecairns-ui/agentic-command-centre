@@ -82,4 +82,4 @@ Everything lives in this folder on your computer. Claude reads your apps through
 
 ## Licence
 
-For Get AI Powers clients, to use and change for your own business. Not for resale or sharing outside your business. See [LICENSE](LICENSE).
+Free to use and change for your own business. Not for resale. See [LICENSE](LICENSE) for the plain-English terms. claude-ads is MIT-licensed and installed separately when you set up Ads OS, with its own licence beside it.

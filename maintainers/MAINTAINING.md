@@ -56,6 +56,6 @@ From shared version 11 the helper (`apps/server/server.js` and `server.py`) read
 
 ## Things to check
 
-- **Licence:** `LICENSE` is the toolkit's licence adapted for a private client kit (no "for free", no passing it on). It has not been reviewed by a solicitor.
+- **Licence:** `LICENSE` is the 7 tools' licence with the toolkit's name, free to use and change for your own business and not for resale (since 2 November 2026, when the kit was confirmed public; the old private-client version said no passing it on). If the kit goes private again, decide whether it needs the client version back. It has not been reviewed by a solicitor.
 - **Shared version numbers:** the kit's `toolkit.json` `sharedVersion` and `attachingVersion` are written by the build from the real files, so they can't drift. `check.py` fails if `sharedVersion` and `apps/shared/VERSION` disagree. Keep each tool's own `toolkit.json` level in its own repository.
 - **A real end-to-end setup** with live connections hasn't been run on this kit yet. The release checks and the browser check prove the files and the app; only a real `/setup` proves the questions.
