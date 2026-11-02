@@ -37,7 +37,7 @@ Never suggest anything that would send, post, pay or delete on its own. Never su
 To `ideas` in `apps/toolkit/data/toolkit.json`, saved safely (read, add, write, check it reads back):
 
 ```json
-{ "id": "i-<6 random letters or digits>", "title": "Chase the 6 overdue invoices automatically", "why": "6 invoices are over 30 days, £3,200 in all", "prompt": "Set up Money View OS for me. Follow the Money View part of START-HERE.md, and skip anything my notes already answer.", "status": "new", "added": "<today>" }
+{ "id": "i-<6 random letters or digits>", "title": "Chase the 6 overdue invoices automatically", "why": "6 invoices are over 30 days, £3,200 in all", "prompt": "Set up Agentic Money View for me. Follow the Money View part of START-HERE.md, and skip anything my notes already answer.", "status": "new", "added": "<today>" }
 ```
 
 - `title`: what they'd get, in under 10 words.

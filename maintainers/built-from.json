@@ -1,32 +1,32 @@
 {
   "tools": {
     "task-list": {
-      "repository": "georgecairns-ui/task-list-os",
-      "commit": "f75951fae9d56332fbba104743a11c60ab109a3a"
+      "repository": "georgecairns-ui/agentic-task-list",
+      "commit": "ec44ad4bfed4c8b234817ad2fc929bc2436003c0"
     },
     "pipeline": {
-      "repository": "georgecairns-ui/pipeline-os",
-      "commit": "157b0c2dc16c0b9ee2874247371d03d4c42d767e"
+      "repository": "georgecairns-ui/agentic-pipeline",
+      "commit": "df8af592d6fe047c998d491a748226fcd9a477ef"
     },
     "skill-map": {
-      "repository": "georgecairns-ui/skill-and-folder-map-os",
-      "commit": "26aa258cecf4cfe7a4282a049be0e843765a2c89"
+      "repository": "georgecairns-ui/agentic-skill-and-folder-map",
+      "commit": "35d1f9a718476fce82614cdcb2e45008618575b8"
     },
     "proposals": {
-      "repository": "georgecairns-ui/proposal-writing-os",
-      "commit": "e75ce76f4ec36f59f07f57ea8b4420add9691322"
+      "repository": "georgecairns-ui/agentic-proposals",
+      "commit": "b3a1fe33b1ed7490bfe423617f124dbaa8f455ca"
     },
     "content": {
-      "repository": "georgecairns-ui/content-machine-os",
-      "commit": "ecb828917827e24ca1251a49c51eb13085dd5521"
+      "repository": "georgecairns-ui/agentic-content-machine",
+      "commit": "69ddda1234460f04909bdfde7fa65dc5f9ebaaae"
     },
     "money": {
-      "repository": "georgecairns-ui/money-view-os",
-      "commit": "fae6504e700ed178dbcc28c445e6a00febf95fd4"
+      "repository": "georgecairns-ui/agentic-money-view",
+      "commit": "34ad14aa3eb27804314048a6b2ca858dad1cb686"
     },
     "ads": {
-      "repository": "georgecairns-ui/ads-os",
-      "commit": "8de3cf5a98d46562a245fe5eacbf457553646f87"
+      "repository": "georgecairns-ui/agentic-ads",
+      "commit": "768847b825c4a5f65c818d223874d55021c3ec78"
     }
   },
   "attach": [

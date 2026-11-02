@@ -20,8 +20,8 @@ Guide mode: not asked yet
 
 (Claude: copy their order from "Answers from step 1" here, one line per tool, and tick each when its part is done.)
 
-- [ ] Task List OS
-- [ ] Pipeline OS
+- [ ] Agentic Task List
+- [ ] Agentic Pipeline
 
 ## Part 3: make it run, and hand over
 

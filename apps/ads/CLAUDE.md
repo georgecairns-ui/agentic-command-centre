@@ -1,6 +1,6 @@
 # Ads: standing instructions for Claude
 
-This folder is the ads app inside Ads OS. You (Claude) and the app share one file, `data/ads.json`. The person sees it as one page, Ads, with a row of views to flick between at the top: Overview, Campaigns, New campaigns and This week, plus a Health check button and a gear for Settings. You read their ad figures and ads into the file, draft new campaigns, build the approved ones switched off, analyse a campaign, write the weekly summary and suggest changes. They approve. On Meta, when they press a button in the app and confirm one exact change, you make that one change in their account. They run their ads from the app, and you do the work. Read this file every time you work with the ads data.
+This folder is the ads app inside Agentic Ads. You (Claude) and the app share one file, `data/ads.json`. The person sees it as one page, Ads, with a row of views to flick between at the top: Overview, Campaigns, New campaigns and This week, plus a Health check button and a gear for Settings. You read their ad figures and ads into the file, draft new campaigns, build the approved ones switched off, analyse a campaign, write the weekly summary and suggest changes. They approve. On Meta, when they press a button in the app and confirm one exact change, you make that one change in their account. They run their ads from the app, and you do the work. Read this file every time you work with the ads data.
 
 The app runs at **http://localhost:4747/ads/**, served by a small helper on this computer (`apps/server/`, started by `.claude/skills/open-my-toolkit`). The helper reads and saves the data file, so you edit it directly as described below; the app picks up your changes within a few seconds.
 
@@ -16,7 +16,7 @@ The jobs live as skills in `.claude/skills/`: `update-my-ads`, `build-a-campaign
 - **Only the approved change.** You never touch a campaign, ad set or ad that the action doesn't name, including one you built earlier. A change you'd suggest is a suggestion for the owner to approve in the app.
 - **No ad account tool is pre-approved.** Claude Code asks before every call to a Meta or Google tool, so the owner approves twice for a change: in the app, then in Claude Code. Say what you're about to do, and never ask them to change that.
 - **Never type a total.** You write raw figures. `model.js` works out spend, results, cost per result, return, lights and pace.
-- **Never store tokens, passwords or customer lists.** Lead details Meta returns are used only for Pipeline OS suggested deals, and never kept anywhere else.
+- **Never store tokens, passwords or customer lists.** Lead details Meta returns are used only for Agentic Pipeline suggested deals, and never kept anywhere else.
 - **Never invent proof.** No made-up results, prices, offers, reviews, numbers or customer names.
 - **Pictures and videos are theirs.** You never make, edit, add, remove or reorder one.
 
@@ -108,7 +108,7 @@ Every `id` is a short prefix plus 6 random lowercase letters or digits, made the
 - **`fromCampaignId`** and **`brief`**: set by the app's Run campaign questions. `fromCampaignId` is the campaign being run again. `brief` is `{ audience: "same" or "change", audienceNote, budget: "same" or "change", daily, start, end, words: "keep" or "fresh" or "mix", note }`. `build-a-campaign` follows them: reuse that campaign's audience and best ads as asked.
 - **`checks`**: things only the owner can confirm. They tick them in the app.
 - **`refs`**: Meta: `campaignId` (the platform's id) and `url`. Google: `file` and `sheet` (the import file and the build sheet, in `files/04-marketing/ads/`). Filled by `build-in-account`.
-- **`taskId`**: `null`, or the id of the switch-on task in Task List OS. `send-to-task-list` writes it when it adds that task, so a build is never sent twice. Nothing else sets it.
+- **`taskId`**: `null`, or the id of the switch-on task in Agentic Task List. `send-to-task-list` writes it when it adds that task, so a build is never sent twice. Nothing else sets it.
 - **`request`**: `null`, or `{ "kind": "write" or "rewrite" or "build", "note": "", "at": "<timestamp>" }`. The app sets it and asks for a job. When you've done what it asks, set it back to `null`. `write` and `rewrite` are for `build-a-campaign`, `build` is for `build-in-account`.
 
 ### `analyses[]`
@@ -135,7 +135,7 @@ The account changes the owner approved. `{ id, kind: "switch-on" or "pause" or "
 
 ### `wins[]`
 
-`{ id, dealId, name, value, wonAt, campaignId: null }`. Copied, read only, from Pipeline OS deals in the `won` stage whose source is ads. The app uses them for "from customers you've won".
+`{ id, dealId, name, value, wonAt, campaignId: null }`. Copied, read only, from Agentic Pipeline deals in the `won` stage whose source is ads. The app uses them for "from customers you've won".
 
 ### `imports[]`
 
@@ -174,9 +174,9 @@ It can show the figures, let the person edit a draft, approve it, drop it, tick 
 
 ## Working with other tools
 
-- **Task List OS** (when `apps/installed.json` has `task-list`): see `ATTACH-CLAUDE.md` for what lands there and how. It needs the person's click there before anything happens. The app asks for it straight away (the `send-to-task-list` job) after they approve a suggestion and after a campaign is built.
-- **Pipeline OS** (`pipeline`): read `apps/pipeline/data/pipeline.json` for deals in the `won` stage whose source is ads, into `wins` (read only: never edit a deal). New Meta leads can become suggested deals there: see `ATTACH-CLAUDE.md`.
-- **Money View OS** (`money`): it reads this tool's `figures` and `settings.monthlyBudget` itself. You write nothing into it.
+- **Agentic Task List** (when `apps/installed.json` has `task-list`): see `ATTACH-CLAUDE.md` for what lands there and how. It needs the person's click there before anything happens. The app asks for it straight away (the `send-to-task-list` job) after they approve a suggestion and after a campaign is built.
+- **Agentic Pipeline** (`pipeline`): read `apps/pipeline/data/pipeline.json` for deals in the `won` stage whose source is ads, into `wins` (read only: never edit a deal). New Meta leads can become suggested deals there: see `ATTACH-CLAUDE.md`.
+- **Agentic Money View** (`money`): it reads this tool's `figures` and `settings.monthlyBudget` itself. You write nothing into it.
 - If a tool isn't attached, skip that part quietly.
 
 ## If something goes wrong

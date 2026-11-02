@@ -4,7 +4,7 @@ Plain answers to the questions people ask before connecting an ad account.
 
 ## Where is my information kept?
 
-In this folder on your computer. Ads OS has no account, no server and no database. Your ads data (your platforms, campaigns and their ads, daily figures, predictions, analyses, drafts, summaries, suggestions and the changes you've approved) is one file, `apps/ads/data/ads.json`. Claude's notes about your business are in `context/`. You can open, read and edit all of it yourself.
+In this folder on your computer. Agentic Ads has no account, no server and no database. Your ads data (your platforms, campaigns and their ads, daily figures, predictions, analyses, drafts, summaries, suggestions and the changes you've approved) is one file, `apps/ads/data/ads.json`. Claude's notes about your business are in `context/`. You can open, read and edit all of it yourself.
 
 If this folder sits inside Google Drive, OneDrive or Dropbox, it's backed up there like any other folder. If that folder is shared with other people, they can read your ad figures and notes too, so keep it in a private part of your drive.
 
@@ -43,15 +43,15 @@ Claude never asks for a password or a token, and none should ever go into this f
 
 ## Does it run when I'm not there?
 
-No. Ads OS has no scheduled run. Claude reads your ad accounts only when you ask, or when you press a button such as Refresh figures in the app, and Claude Code asks you before each call to Meta or Google. No ad account tool is pre-approved, not even one that only reads, so nothing reads your accounts while you're away.
+No. Agentic Ads has no scheduled run. Claude reads your ad accounts only when you ask, or when you press a button such as Refresh figures in the app, and Claude Code asks you before each call to Meta or Google. No ad account tool is pre-approved, not even one that only reads, so nothing reads your accounts while you're away.
 
 ## What about the details of people who fill in my lead forms?
 
-If Pipeline OS is attached and Meta's connection returns the details of people who filled in a lead form, Claude can turn each into a suggested deal in Pipeline OS, which waits for your click. The details go there and nowhere else: Ads OS never keeps them. If Pipeline OS isn't attached, Claude doesn't use them at all. Claude never uploads a customer list to Meta or Google, for any reason.
+If Agentic Pipeline is attached and Meta's connection returns the details of people who filled in a lead form, Claude can turn each into a suggested deal in Agentic Pipeline, which waits for your click. The details go there and nowhere else: Agentic Ads never keeps them. If Agentic Pipeline isn't attached, Claude doesn't use them at all. Claude never uploads a customer list to Meta or Google, for any reason.
 
 ## Where do my photos and videos go?
 
-When you add a photo or video to an ad (by dragging it from a folder onto the ad, or with the Add from your computer button), a copy is saved in `apps/ads/data/media/` inside this folder, on your computer. Your ads file only lists their names. Nothing is uploaded by the app, and they're never part of the Ads OS download.
+When you add a photo or video to an ad (by dragging it from a folder onto the ad, or with the Add from your computer button), a copy is saved in `apps/ads/data/media/` inside this folder, on your computer. Your ads file only lists their names. Nothing is uploaded by the app, and they're never part of the Agentic Ads download.
 
 "Remove from ad" only takes the picture off that ad. The file stays in the media folder, and nothing in the app can delete it. If you want a file gone, delete it in the folder yourself. The app only saves pictures and videos (JPG, PNG, WebP, GIF, MP4, MOV and WebM, up to 200 MB each) and never replaces a file that's already there.
 
@@ -65,7 +65,7 @@ Google and Meta count a result differently (Meta counts some results from people
 
 ## What is claude-ads?
 
-A free set of ad-planning skills by AgriciDaniel, under the MIT licence. Setup installs a tested copy from George's fork, at a fixed version, into this folder only: `.claude/skills` (the folders starting `ads`) and `.claude/agents`. Its licence is kept beside it in `.claude/skills/ads/`. Claude uses it to plan and draft. It never uses it to change an ad account. The installer doesn't add any other software to your computer. If you'd rather not have it, delete those folders yourself: Ads OS still works from its own basics.
+A free set of ad-planning skills by AgriciDaniel, under the MIT licence. Setup installs a tested copy from George's fork, at a fixed version, into this folder only: `.claude/skills` (the folders starting `ads`) and `.claude/agents`. Its licence is kept beside it in `.claude/skills/ads/`. Claude uses it to plan and draft. It never uses it to change an ad account. The installer doesn't add any other software to your computer. If you'd rather not have it, delete those folders yourself: Agentic Ads still works from its own basics.
 
 ## Will Claude make things up?
 
@@ -77,11 +77,11 @@ No. It doesn't send emails, messages or posts. Your ads data is saved in files o
 
 ## What is the helper?
 
-Your app runs from a small program in your Small Business Toolkit folder, so it opens like a web page at http://localhost:4747. It only listens on your own computer: nothing on the internet or your network can reach it. It only shows the app and only ever saves your ads file (keeping a backup before every save) and the photos and videos you add to ads, which it never replaces or deletes. It can't read an ad account. When you press Refresh figures, New campaign or another Claude button in the app, it can start Claude Code on your computer to do that one job, and only when the app itself asks.
+Your app runs from a small program in your Agentic Command Centre folder, so it opens like a web page at http://localhost:4747. It only listens on your own computer: nothing on the internet or your network can reach it. It only shows the app and only ever saves your ads file (keeping a backup before every save) and the photos and videos you add to ads, which it never replaces or deletes. It can't read an ad account. When you press Refresh figures, New campaign or another Claude button in the app, it can start Claude Code on your computer to do that one job, and only when the app itself asks.
 
 ## Who sees my information?
 
-You, and Claude while you're working with it. Your conversations with Claude are covered by your Claude account's privacy settings, which you can check in the Claude app. Meta and Google see what they always do in your ad accounts. Get AI Powers, who made Ads OS, can't see your folder or your data.
+You, and Claude while you're working with it. Your conversations with Claude are covered by your Claude account's privacy settings, which you can check in the Claude app. Meta and Google see what they always do in your ad accounts. Get AI Powers, who made Agentic Ads, can't see your folder or your data.
 
 ## The approve button
 

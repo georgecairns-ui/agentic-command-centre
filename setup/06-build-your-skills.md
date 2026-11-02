@@ -64,7 +64,7 @@ Try one straight away on something real, so they see it work. For example, draft
 
 Then tell them, in your own words:
 
-> I've built you 4 skills: your services, quotes, replying to new enquiries and welcoming a new client. They already work here. I've also saved them in the **skills-to-upload** folder inside Task List OS, so you can add them to Claude and use them everywhere, including the Claude app on your phone.
+> I've built you 4 skills: your services, quotes, replying to new enquiries and welcoming a new client. They already work here. I've also saved them in the **skills-to-upload** folder inside Agentic Task List, so you can add them to Claude and use them everywhere, including the Claude app on your phone.
 >
 > To add them: open Claude (claude.ai or the Claude app) and go to **Customize**, then **Skills**. Press **+**, then **Create skill**, then **Upload a skill**, and choose a file from the skills-to-upload folder. Do it once for each file. It takes about a minute.
 

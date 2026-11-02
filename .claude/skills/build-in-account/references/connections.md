@@ -26,7 +26,7 @@ Everything below that Claude has not seen first hand in this kit is marked **to 
 - **Never:** a tool that deletes, and any change the owner did not approve in the app.
 - **What it can read about ads:** each campaign's ads, their words and status, and daily figures per ad. (To check which tools, and whether the daily split per ad is offered.)
 - **Pictures and videos:** whether it can upload them is to check. If not, the owner adds them in Meta's own tools. Whether it hands over an existing ad's picture for `update-my-ads` to save is also to check: if it doesn't, the ad is saved as words only.
-- **Lead details:** if a read tool returns the details of people who filled in a lead form, use them only for Pipeline OS suggested deals when it's attached, and never write them anywhere else.
+- **Lead details:** if a read tool returns the details of people who filled in a lead form, use them only for Agentic Pipeline suggested deals when it's attached, and never write them anywhere else.
 - **Before any build:** read the account name and id, and check they match `platforms.meta`.
 
 ## Google Ads
@@ -39,4 +39,4 @@ Everything below that Claude has not seen first hand in this kit is marked **to 
 
 ## If there's no connection
 
-Ads OS still works. Claude reads figures from a report the owner downloads (`.claude/skills/update-my-ads/references/exports.md`), drafts campaigns, and writes the Google import file. It can't build a Meta campaign in the account without the Meta connection: say so, and offer to write the campaign out as a sheet to build by hand.
+Agentic Ads still works. Claude reads figures from a report the owner downloads (`.claude/skills/update-my-ads/references/exports.md`), drafts campaigns, and writes the Google import file. It can't build a Meta campaign in the account without the Meta connection: say so, and offer to write the campaign out as a sheet to build by hand.

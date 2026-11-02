@@ -1,13 +1,13 @@
 ---
 name: open-my-toolkit
-description: Gets the person's Small Business Toolkit running on their computer and gives them the link (http://localhost:4747). Starts the helper if it isn't running, and can make it start with the computer. Use when they type /open-my-toolkit, say "open my toolkit", "open the small business toolkit", "open the app", "open my task list" (or open any of the 7 tools by name), "where's my toolkit?", "it isn't loading", or at the end of setup.
+description: Gets the person's Agentic Command Centre running on their computer and gives them the link (http://localhost:4747). Starts the helper if it isn't running, and can make it start with the computer. Use when they type /open-my-toolkit, say "open my toolkit", "open the small business toolkit", "open the app", "open my task list" (or open any of the 7 tools by name), "where's my toolkit?", "it isn't loading", or at the end of setup.
 ---
 
 # Open my toolkit
 
-The Small Business Toolkit runs from a small helper on the person's computer (`apps/server/`), so it opens like a normal web page at **http://localhost:4747**: no folder to pick, nothing to allow. One helper runs every tool, so this skill is the way in for all of them, the task list included. The helper only listens on this computer, only serves the app, and only ever saves the app's own data files.
+The Agentic Command Centre runs from a small helper on the person's computer (`apps/server/`), so it opens like a normal web page at **http://localhost:4747**: no folder to pick, nothing to allow. One helper runs every tool, so this skill is the way in for all of them, the task list included. The helper only listens on this computer, only serves the app, and only ever saves the app's own data files.
 
-Each tool has its own page: the task list is at `/task-list/`, Pipeline OS at `/pipeline/`, Skill and Folder Map OS at `/skill-map/`, Proposal Writing OS at `/proposals/`, Content Machine OS at `/content/`, Money View OS at `/money/` and Ads OS at `/ads/`. The link with nothing after it opens Home.
+Each tool has its own page: the task list is at `/task-list/`, Agentic Pipeline at `/pipeline/`, Agentic Skill and Folder Map at `/skill-map/`, Agentic Proposals at `/proposals/`, Agentic Content Machine at `/content/`, Agentic Money View at `/money/` and Agentic Ads at `/ads/`. The link with nothing after it opens Home.
 
 ## Steps
 
@@ -23,14 +23,14 @@ Each tool has its own page: the task list is at `/task-list/`, Pipeline OS at `/
    - To undo: the same script with `remove` (Mac) or `-Remove` (Windows).
 4. **Open it for them.** Ask, then open the link in their browser: `open http://localhost:4747` (Mac) or `start http://localhost:4747` (Windows). If they asked for one tool, add its page to the link (for example `http://localhost:4747/money/`). Any modern browser works.
 5. Tell them:
-   > Your toolkit is at **http://localhost:4747**. Bookmark it; that's your link from now on. You can also double-click **Open Small Business Toolkit** in your toolkit folder. Anything I do shows up there within a few seconds.
+   > Your toolkit is at **http://localhost:4747**. Bookmark it; that's your link from now on. You can also double-click **Open Agentic Command Centre** in your toolkit folder. Anything I do shows up there within a few seconds.
 
 ## If it doesn't load
 
 - **"Port already in use"**: something else is using 4747. Check whether it's the toolkit already (`curl -s http://127.0.0.1:4747/api/alive.js` returns `window.tlosAlive = true;`). If it's something else, start the helper on another port with `TLOS_PORT=4848` (and use that port in the link and the autostart).
 - **The page says it stopped running**: run step 1 again; the page reconnects by itself.
 - **A page is empty or says a file has a mistake**: check that tool's data file is valid (see the `CLAUDE.md` inside its `apps/` folder).
-- Logs: `~/Library/Logs/small-business-toolkit.log` on a Mac.
+- Logs: `~/Library/Logs/agentic-command-centre.log` on a Mac.
 
 ## Rules
 

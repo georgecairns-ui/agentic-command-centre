@@ -1,6 +1,6 @@
 ---
 name: analyse-campaign
-description: Looks closely at one campaign in Ads OS and writes a plain analysis of it - what is working, what is wasting money and what Claude could not see - then sets a prediction if the campaign has none and adds up to 3 suggestions. Uses only the numbers the app works out. Never changes anything in an ad account. Use when they press Analyse campaign, or say "analyse my campaign", "how's the whitening campaign doing", "why is this campaign expensive", "is this campaign worth keeping" or "look at my autumn campaign".
+description: Looks closely at one campaign in Agentic Ads and writes a plain analysis of it - what is working, what is wasting money and what Claude could not see - then sets a prediction if the campaign has none and adds up to 3 suggestions. Uses only the numbers the app works out. Never changes anything in an ad account. Use when they press Analyse campaign, or say "analyse my campaign", "how's the whitening campaign doing", "why is this campaign expensive", "is this campaign worth keeping" or "look at my autumn campaign".
 ---
 
 # Analyse campaign

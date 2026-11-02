@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BUILD: assemble the Small Business Toolkit from the 7 tools
+BUILD: assemble the Agentic Command Centre from the 7 tools
 ----------------------------------------------------------
 Run it from anywhere:   python3 maintainers/build.py
 
@@ -10,7 +10,7 @@ What it does, in order:
   2. Runs each tool's own release check (maintainers/make-release.sh) on that copy. If any tool fails its
      own check, the build stops: nothing broken or holding real data ever reaches this kit.
   3. Checks the shared parts (apps/server, apps/shared, apps/home, ATTACHING.md) are identical in all 7.
-  4. Starts from Task List OS's files (the first tool in the list is only the base the build copies first;
+  4. Starts from Agentic Task List's files (the first tool in the list is only the base the build copies first;
      it is not special in the product) and attaches the other 6, exactly as ATTACHING.md describes:
      their app folders, skills, setup steps, connection guides, notes templates and files folders (the
      base's copy wins when both have a file), their entry in apps/installed.json, their own permissions
@@ -67,12 +67,12 @@ DIFFER_ALLOW = {
     "setup/progress.md": "the overlay ships the blank toolkit progress file",
     "skills-to-upload/README.md": "per-tool folder note; the base's covers the toolkit",
     "setup/01-quick-questions.md": "the base's own setup step; the toolkit runs setup/toolkit-01..04 instead",
-    "setup/02-connect-email-and-calendar.md": "each email tool fills its own data from the 30-day read; the base's copy, with the overlay's 2.4 feeding every tool once, stands for the toolkit. Pipeline OS's copy also has 2.7 (asking whether Claude may send emails the person approved), which the kit's merged setup doesn't ask: pre-existing since shared v12, flagged to George",
+    "setup/02-connect-email-and-calendar.md": "each email tool fills its own data from the 30-day read; the base's copy, with the overlay's 2.4 feeding every tool once, stands for the toolkit. Agentic Pipeline's copy also has 2.7 (asking whether Claude may send emails the person approved), which the kit's merged setup doesn't ask: pre-existing since shared v12, flagged to George",
     "setup/03-connect-call-recordings.md": "each tool words what a call gives it and numbers its own steps; the base's copy stands for the toolkit",
     "setup/04-connect-other-apps.md": "the base's own setup step; the overlay adjusts its wording",
     "setup/05-get-to-know-the-business.md": "the base's shared business step; every tool reuses it",
     "setup/06-build-your-skills.md": "the base's own setup step; the overlay adjusts its wording",
-    "setup/08-make-it-automatic.md": "Proposal Writing OS's own check-in step (its step 11); the toolkit makes one check-in for every tool in setup/toolkit-03-make-it-automatic.md instead",
+    "setup/08-make-it-automatic.md": "Agentic Proposals's own check-in step (its step 11); the toolkit makes one check-in for every tool in setup/toolkit-03-make-it-automatic.md instead",
     "setup/09-check-and-hand-over.md": "the base's own hand-over step; the toolkit uses toolkit-04",
     "context/README.md": "shared context note; the base's covers the toolkit",
     "context/business.md": "shared context, filled once for the whole toolkit; the base's is the blank one",
@@ -186,7 +186,7 @@ def attach(kit, work, report):
     claude_md = (kit / "CLAUDE.md").read_text()
     marker = "None yet. When a tool is attached, its day-to-day instructions go here, copied from its `ATTACH-CLAUDE.md`."
     if marker not in claude_md:
-        fail("Task List OS's CLAUDE.md (the base copy) no longer has the 'Attached tools' placeholder this build replaces")
+        fail("Agentic Task List's CLAUDE.md (the base copy) no longer has the 'Attached tools' placeholder this build replaces")
     sections = []
     installed = json.loads((kit / "apps/installed.json").read_text())
     settings = json.loads((kit / ".claude/settings.json").read_text())
@@ -302,17 +302,17 @@ def neutral_step_numbers(kit):
     return n
 
 
-FOLDER_NAME = re.compile(r"\b(your|their|the) (Task List|Pipeline|Proposal Writing|Content Machine|Money View|Ads|Skill and Folder Map) OS folder\b")
+FOLDER_NAME = re.compile(r"\b(your|their|the) Agentic (Task List|Pipeline|Proposals|Content Machine|Money View|Ads|Skill and Folder Map) folder\b")
 
 
 def one_folder_name(kit):
-    """Each tool tells the person to open "your Pipeline OS folder" and so on. Here it's all one folder."""
+    """Each tool tells the person to open "your Agentic Pipeline folder" and so on. Here it's all one folder."""
     n = 0
     for f in kit.rglob("*"):
         if not f.is_file() or f.suffix not in (".md", ".js", ".html", ".sh", ".ps1") or "maintainers" in f.relative_to(kit).parts:
             continue
         text = f.read_text()
-        new = FOLDER_NAME.sub(r"\1 Small Business Toolkit folder", text)
+        new = FOLDER_NAME.sub(r"\1 Agentic Command Centre folder", text)
         if new != text:
             f.write_text(new)
             n += 1
@@ -321,7 +321,7 @@ def one_folder_name(kit):
 
 # The ways in that belong to one tool. They are derived from the tools' own files, not fixed:
 # every tool now ships an `open-the-app` skill, `start-app.*` scripts and its own `Open <name>.html`.
-# The kit has its own (Open Small Business Toolkit.html, start-toolkit.*, the open-my-toolkit skill),
+# The kit has its own (Open Agentic Command Centre.html, start-toolkit.*, the open-my-toolkit skill),
 # added from the overlay, so the tools' are removed and every reference to them is renamed.
 # These older names are still handled, so a tool not yet at shared version 11 is caught too.
 LEGACY_OPENERS = ["Open Task List.html"]
@@ -363,7 +363,7 @@ def drop_tool_entry_points(kit, openers):
 
 def rename_map(openers):
     """Old name -> the toolkit's name, in every file (the tools' docs, skills and CLAUDE.md sections point at them)."""
-    pairs = [(name, "Open Small Business Toolkit.html") for name in sorted(openers)]
+    pairs = [(name, "Open Agentic Command Centre.html") for name in sorted(openers)]
     pairs += [
         ("open-the-app", "open-my-toolkit"),
         ("open-task-list", "open-my-toolkit"),
@@ -488,7 +488,7 @@ def main():
         release_checks(work)
         print("3. Checking the shared parts")
         check_shared(work)
-        print("4. Attaching the 6 other tools to the base (Task List OS's files)")
+        print("4. Attaching the 6 other tools to the base (Agentic Task List's files)")
         report = []
         attach(kit, work, report)
         for r in report:
@@ -509,7 +509,7 @@ def main():
         write_kit(kit)
     (HERE / "built-from.json").write_text(json.dumps({"tools": got, "attach": report}, indent=2) + "\n")
     local = [t for t, g in got.items() if "folder" in g]
-    print("Built Small Business Toolkit." + (" WARNING: built from local folders (" + ", ".join(local) + "), not for release." if local else ""))
+    print("Built Agentic Command Centre." + (" WARNING: built from local folders (" + ", ".join(local) + "), not for release." if local else ""))
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 /*
-  ADS OS: the app
+  AGENTIC ADS: the app
   ---------------
   Ties everything together:
   1. Connects to data/ads.json through the shared store.
@@ -44,7 +44,7 @@
   const PLATFORM_CHOICES = [{ key: "all", label: "All" }].concat(M.PLATFORMS.map(function (p) { return { key: p.key, label: p.short }; }));
   const MAX_DAILY = 100000;   // a typed budget above this is a slip of the finger, not a budget
   const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], [tabindex="0"]';
-  const STORE_RANGE = "ads-os-range", STORE_PLATFORM = "ads-os-platform";
+  const STORE_RANGE = "agentic-ads-range", STORE_PLATFORM = "agentic-ads-platform";
 
   // The range and platform chosen on the rail are remembered in this browser. If it won't remember, the choice still works.
   function remembered(key, allowed, fallback) {
@@ -128,7 +128,7 @@
     gate.innerHTML = html;
   }
   function gateCard(eyebrow, title, body, actions) {
-    return '<div class="gate__card"><div class="gate__text"><div class="gate__brand"><img src="../shared/images/claude-icon.png" alt="" width="28" height="28"><span>Ads OS</span></div>' +
+    return '<div class="gate__card"><div class="gate__text"><div class="gate__brand"><img src="../shared/images/claude-icon.png" alt="" width="28" height="28"><span>Agentic Ads</span></div>' +
       (eyebrow ? '<span class="label">' + esc(eyebrow) + "</span>" : "") + "<h1>" + esc(title) + "</h1>" + body +
       (actions ? '<div class="gate__actions">' + actions + "</div>" : "") + '</div><div class="gate__art"><img src="' + C.ART.welcome + '" alt="" width="440" height="440"></div></div>';
   }
@@ -138,7 +138,7 @@
     }
     if (status === "needs-helper") {
       return showGate(gateCard("", "Your ads open from Claude.",
-        "<p>Claude runs it on this computer and gives you a link. In Claude Code, in your Small Business Toolkit folder, just say:</p>" + C.say("Open my ads") +
+        "<p>Claude runs it on this computer and gives you a link. In Claude Code, in your Agentic Command Centre folder, just say:</p>" + C.say("Open my ads") +
         "<p class=\"gate__note\">Not set up yet? Say <strong>/setup</strong> instead.</p>",
         '<button type="button" class="link-btn" data-action="connect">Or connect the folder yourself in Chrome</button>'));
     }
@@ -147,7 +147,7 @@
     }
     if (status === "needs-connect") {
       return showGate(gateCard("One-time setup", "Connect your ads.",
-        "<p>Choose your <strong>Ads OS</strong> folder, the one with START-HERE.md in it, then click <strong>Allow</strong> when Chrome asks. Nothing leaves your computer.</p>",
+        "<p>Choose your <strong>Agentic Ads</strong> folder, the one with START-HERE.md in it, then click <strong>Allow</strong> when Chrome asks. Nothing leaves your computer.</p>",
         '<button type="button" class="btn btn--primary btn--lg" data-action="connect">' + icon("folder") + "Connect your folder</button>"));
     }
     if (status === "needs-permission") {
@@ -170,7 +170,7 @@
   function viewFor(id) {
     return V[id] || {
       title: TITLES[id], line: function () { return ""; },
-      render: function (root) { root.innerHTML = '<div class="page">' + C.emptyState("This page didn’t load", "Reload the page. If it still doesn’t show, ask Claude to check the Ads OS files.") + "</div>"; }
+      render: function (root) { root.innerHTML = '<div class="page">' + C.emptyState("This page didn’t load", "Reload the page. If it still doesn’t show, ask Claude to check the Agentic Ads files.") + "</div>"; }
     };
   }
   function typingInView() {
@@ -341,7 +341,7 @@
     state.rendered = id;
     $("#viewTitle").textContent = view.title || TITLES[id];
     $("#viewSub").textContent = M.isSetUp(data) ? view.line(ctx) : "Let’s set up your ads";
-    document.title = (view.title || TITLES[id]) + " · Ads OS";
+    document.title = (view.title || TITLES[id]) + " · Agentic Ads";
   }
 
   // Moving to a page adds an entry to the browser's history, so Back returns to the page before.
@@ -424,7 +424,7 @@
       return false;
     });
   }
-  // Task List OS is attached when apps/installed.json lists it. That file is read once, the first time it is needed.
+  // Agentic Task List is attached when apps/installed.json lists it. That file is read once, the first time it is needed.
   let taskListPromise = null;
   function taskListAttached() {
     if (!taskListPromise) {
@@ -435,7 +435,7 @@
     }
     return taskListPromise;
   }
-  // After an approved suggestion or a built campaign: asks Claude to put it in the task list, only when Task List OS is attached.
+  // After an approved suggestion or a built campaign: asks Claude to put it in the task list, only when Agentic Task List is attached.
   // Without it nothing happens.
   function sendToTaskList() {
     return taskListAttached().then(function (attached) { return attached ? runJob("send-to-task-list") : false; });
@@ -607,7 +607,7 @@
     const action = pending.action, checks = action ? checksOf(action) : { ok: false };
     if (!action || !checks.ok) return;
     if (!approvalStore.isHelper()) {
-      ui.toast("Your yes can’t be saved yet, so nothing was sent. Open Ads OS from its link (in Claude, say “open my ads”) and try again. If it still fails, ask Claude to check your Ads OS files.", { icon: "info", duration: 9000 });
+      ui.toast("Your yes can’t be saved yet, so nothing was sent. Open Agentic Ads from its link (in Claude, say “open my ads”) and try again. If it still fails, ask Claude to check your Agentic Ads files.", { icon: "info", duration: 9000 });
       return;
     }
     pending = null;
@@ -636,7 +636,7 @@
       dlg.innerHTML = '<div class="modal__head"><h2 id="confirmTitle">One more step: open Claude</h2><button type="button" class="icon-btn" data-close aria-label="Close">' + icon("x") + "</button></div>" +
         '<div class="modal__body"><p class="confirm__who muted">' + esc(sentence) + "</p>" +
         "<p>Your yes is saved. Press Open Claude and send the words that are already typed in. Claude Code then asks you before each call to your " + esc(managerOf("meta").short) + " account. Say yes only if it matches the change you just confirmed.</p>" +
-        '<p class="prefs-hint">' + (link ? "If Claude doesn’t open, copy the words and paste them into Claude Code in your Small Business Toolkit folder." : "Open Claude Code in your Small Business Toolkit folder and paste the words in.") + "</p></div>" +
+        '<p class="prefs-hint">' + (link ? "If Claude doesn’t open, copy the words and paste them into Claude Code in your Agentic Command Centre folder." : "Open Claude Code in your Agentic Command Centre folder and paste the words in.") + "</p></div>" +
         '<div class="modal__foot"><button type="button" class="btn" data-close>Not now</button><span class="spacer"></span>' +
         '<button type="button" class="btn" data-copy="' + esc(prompt) + '">' + icon("fileText") + "Copy the words</button>" +
         (link ? '<a class="btn btn--primary" href="' + esc(link) + '">' + icon("external") + "Open Claude</a>" : "") + "</div>";
@@ -649,7 +649,7 @@
   function markChangeFailed(actionId) {
     const action = (data.actions || []).find(function (a) { return a.id === actionId; });
     if (!action || !M.actionStuck(action, Date.now())) { ui.toast("That change isn’t stuck. Give Claude a little longer.", { icon: "info" }); return Promise.resolve(false); }
-    if (!approvalStore.isHelper()) { ui.toast("Open Ads OS from its link to do that.", { icon: "info" }); return Promise.resolve(false); }
+    if (!approvalStore.isHelper()) { ui.toast("Open Agentic Ads from its link to do that.", { icon: "info" }); return Promise.resolve(false); }
     return approve(function (d) {
       d.approvals.forEach(function (a) { if (a.id === actionId && !a.closedAt) a.closedAt = M.nowIso(); });
     }).then(function () {
@@ -675,7 +675,7 @@
     if (!kinds[change]) { ui.toast("Choose what to change first.", { icon: "info" }); return Promise.resolve(false); }
     if (change === "budget" && !(budgetTo !== null && isFinite(budgetTo) && budgetTo > 0 && budgetTo <= MAX_DAILY)) { ui.toast("Enter the new daily budget in pounds, for example 15.", { icon: "info" }); return Promise.resolve(false); }
     const title = change === "pause" ? "Pause “" + c.name + "” in Google Ads" : change === "switch-on" ? "Switch on “" + c.name + "” in Google Ads" : "Change the daily budget of “" + c.name + "” to " + M.money(budgetTo) + " in Google Ads";
-    const why = "You asked for this in Ads OS. Google Ads is changed by you, so it is on your task list.";
+    const why = "You asked for this in Agentic Ads. Google Ads is changed by you, so it is on your task list.";
     return update(function (d) {
       d.suggestions.unshift({ id: M.makeId("s"), kind: kinds[change], platform: "google", campaignId: campaignId, title: title, why: why, status: "approved", createdAt: M.nowIso(), decidedAt: M.nowIso(), taskId: null });
     }, "Added to your task list: " + title, campaignId).then(function () {
@@ -817,7 +817,7 @@
     const btn = e.target.closest("[data-action]");
     if (!btn) return;
     switch (btn.getAttribute("data-action")) {
-      case "connect": store.connect().catch(function (err) { ui.toast(err && err.kind === "wrong-folder" ? "That folder doesn't have an ads file in it. Choose the Small Business Toolkit folder." : "Couldn't connect that folder. Please try again.", { icon: "alert", duration: 6000 }); }); break;
+      case "connect": store.connect().catch(function (err) { ui.toast(err && err.kind === "wrong-folder" ? "That folder doesn't have an ads file in it. Choose the Agentic Command Centre folder." : "Couldn't connect that folder. Please try again.", { icon: "alert", duration: 6000 }); }); break;
       case "reconnect": store.reconnect(); break;
       case "retry": store.retry(); break;
       case "settings": Settings.open(); break;

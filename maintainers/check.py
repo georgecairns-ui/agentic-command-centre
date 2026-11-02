@@ -10,10 +10,10 @@ Exits 1 and says why if anything fails. It checks the kit at the repository root
   3. Every tool in apps/installed.json is there: its page, its menu, its data files, and its skills.
   4. Every setup step, skill and connection guide that START-HERE.md, the Toolkit app and the new skills
      point to exists.
-  5. The words: no em dashes in anything written for this kit, no tool still says "your <Tool> OS folder", and the
+  5. The words: no em dashes in anything written for this kit, no tool still says "your Agentic <Tool> folder", and the
      shared version 13 setup rules (no giving up on a connection, no keys, no GitHub sign-in).
   6. maintainers/built-from.json says every tool came from GitHub's main, not a local folder.
-  7. It is the Small Business Toolkit, not Task List OS with extras: one opener, one start script pair and one
+  7. It is the Agentic Command Centre, not Agentic Task List with extras: one opener, one start script pair and one
      open-the-app skill, all named for the toolkit, and none of the old names or "host" wording left anywhere.
 """
 import ast, json, pathlib, re, subprocess, sys
@@ -102,7 +102,7 @@ for t in installed:
             bad("%s lists %s, which is missing" % (t["id"], d))
 settings = json.loads((ROOT / ".claude/settings.json").read_text())["permissions"]["allow"]
 # Data files a tool gates on purpose: Claude writes them only with the owner's recorded yes, through a
-# prompt, so they are not in the free-edit list (Ads OS's approvals file).
+# prompt, so they are not in the free-edit list (Agentic Ads's approvals file).
 GATED_DATA = {"apps/ads/data/approvals.json"}
 for t in installed:
     for d in t.get("dataFiles", []):
@@ -182,7 +182,7 @@ for p, rel in kit_files():
         if re.search(pattern, text, re.I):
             bad("%s %s (shared version 13): matched %r" % (r, why, pattern))
 
-folder = re.compile(r"\b(?:your|their|the) (?:Task List|Pipeline|Proposal Writing|Content Machine|Money View|Ads|Skill and Folder Map) OS folder\b")
+folder = re.compile(r"\b(?:your|their|the) (?:(?:Task List|Pipeline|Proposal Writing|Content Machine|Money View|Ads|Skill and Folder Map) OS|Agentic (?:Task List|Pipeline|Proposals|Content Machine|Money View|Ads|Skill and Folder Map)) folder\b")
 for p, rel in kit_files():
     if p.suffix in (".md", ".js", ".html", ".sh", ".ps1") and folder.search(p.read_text()):
         bad("%s still names a single tool's folder" % rel)
@@ -195,11 +195,11 @@ for tid, b in built.items():
 
 # ---------- 7. One name, one way in ----------
 # The toolkit's own way in is there and named for the toolkit.
-for need in ("Open Small Business Toolkit.html", "setup/scripts/start-toolkit.sh", "setup/scripts/start-toolkit.ps1", ".claude/skills/open-my-toolkit/SKILL.md"):
+for need in ("Open Agentic Command Centre.html", "setup/scripts/start-toolkit.sh", "setup/scripts/start-toolkit.ps1", ".claude/skills/open-my-toolkit/SKILL.md"):
     if not (ROOT / need).is_file():
         bad("%s is missing" % need)
-if "<title>Opening Small Business Toolkit</title>" not in (ROOT / "Open Small Business Toolkit.html").read_text():
-    bad("Open Small Business Toolkit.html is not titled 'Opening Small Business Toolkit'")
+if "<title>Opening Agentic Command Centre</title>" not in (ROOT / "Open Agentic Command Centre.html").read_text():
+    bad("Open Agentic Command Centre.html is not titled 'Opening Agentic Command Centre'")
 if not (ROOT / "setup/scripts/start-toolkit.sh").stat().st_mode & 0o111:
     bad("setup/scripts/start-toolkit.sh is not executable")
 
@@ -213,12 +213,12 @@ for f in sorted((ROOT / "setup/scripts").glob("start-*")):
         bad("setup/scripts/%s is one tool's own start script (only start-toolkit.* belongs in the kit)" % f.name)
 # Rule: no "Open *.html" opener at the root other than the toolkit's.
 for f in sorted(ROOT.glob("Open *.html")):
-    if f.name != "Open Small Business Toolkit.html":
-        bad("%s is one tool's own opener (only Open Small Business Toolkit.html belongs in the kit)" % f.name)
+    if f.name != "Open Agentic Command Centre.html":
+        bad("%s is one tool's own opener (only Open Agentic Command Centre.html belongs in the kit)" % f.name)
 
 # Rule: no reference anywhere to a .claude/skills/<x> or setup/scripts/<x> that isn't in the kit.
 # This catches a rename the build missed (for example a leftover open-the-app or start-app).
-# Ads OS's Claude Ads skills are installed into .claude/skills/ by the person during setup, so they
+# Agentic Ads's Claude Ads skills are installed into .claude/skills/ by the person during setup, so they
 # are allowed to be absent in a blank kit.
 EXTERNAL_SKILLS = {"ads", "ads-audit", "ads-meta", "ads-google", "ads-math"}
 ref_re = re.compile(r"(?:\.claude/skills|setup/scripts)/([A-Za-z0-9][A-Za-z0-9._-]*)")
@@ -252,8 +252,8 @@ for p, rel in kit_files():
         text = p.read_text()
     except UnicodeDecodeError:
         continue  # fonts and images
-    if "Small Business Toolkit OS" in text or "small-business-toolkit-os" in text:
-        bad("%s still says \"Small Business Toolkit OS\" (the product is the Small Business Toolkit, no OS)" % rel)
+    if "Agentic Command Centre OS" in text or "agentic-command-centre-os" in text or "Small Business Toolkit" in text:
+        bad("%s still uses an old name, \"Small Business Toolkit\" or \"Agentic Command Centre OS\" (the product is the Agentic Command Centre)" % rel)
     if HOST_WORDS.search(text):
         bad("%s still talks about \"the host\" or a \"host tool\"" % rel)
 

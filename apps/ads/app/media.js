@@ -47,10 +47,10 @@
   function failure(status, name) {
     const quoted = "“" + name + "”";
     let message = "Couldn’t save " + quoted + " into your folder. Check there’s room on your computer and try again.";
-    if (status === 0) message = "Couldn’t reach Ads OS to save " + quoted + ". In Claude, say “open my ads”, then try again.";
+    if (status === 0) message = "Couldn’t reach Agentic Ads to save " + quoted + ". In Claude, say “open my ads”, then try again.";
     else if (status === 413) message = quoted + " is over 200 MB, which is too big to add. Try a shorter or smaller version.";
     else if (status === 415) message = quoted + " isn’t a picture or video this can use.";
-    else if (status === 403 || status === 404 || status === 405) message = "This copy of Ads OS can’t keep pictures and videos yet. Ask Claude to update it, then try again.";
+    else if (status === 403 || status === 404 || status === 405) message = "This copy of Agentic Ads can’t keep pictures and videos yet. Ask Claude to update it, then try again.";
     const err = new Error(message);
     err.status = status;
     return err;

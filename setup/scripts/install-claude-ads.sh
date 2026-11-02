@@ -2,7 +2,7 @@
 #
 # INSTALL CLAUDE ADS (Mac and Linux)
 # ----------------------------------
-# Adds the claude-ads skills to this folder, for Ads OS to use when it plans and builds campaigns.
+# Adds the claude-ads skills to this folder, for Agentic Ads to use when it plans and builds campaigns.
 # Claude runs this for you during setup; you never need to.
 #   bash setup/scripts/install-claude-ads.sh
 #
@@ -32,7 +32,7 @@ ZIP_URL="${CLAUDE_ADS_ZIP_URL:-$FORK_URL/archive/refs/tags/$TAG.zip}"
 ZIP_SHA256="${CLAUDE_ADS_ZIP_SHA256:-40fb78610d8618e7f23db4d62e52f87f1b8cba0c83457c2394b08b5df49f67f6}"
 
 KIT="$(cd "$(dirname "$0")/../.." && pwd)"
-WORK="$(mktemp -d "${TMPDIR:-/tmp}/ads-os-claude-ads.XXXXXX")"
+WORK="$(mktemp -d "${TMPDIR:-/tmp}/agentic-ads-claude-ads.XXXXXX")"
 trap 'rm -rf "$WORK"' EXIT
 
 fail() { echo "claude-ads was not installed: $1" >&2; exit 1; }
@@ -93,9 +93,9 @@ cp "$SRC/LICENSE" "$DEST/LICENSE"
 [ -f "$SRC/THIRD_PARTY_NOTICES.md" ] && cp "$SRC/THIRD_PARTY_NOTICES.md" "$DEST/THIRD_PARTY_NOTICES.md"
 
 cat > "$DEST/INSTALLED-BY-ADS-OS.md" <<NOTE
-# Installed by Ads OS
+# Installed by Agentic Ads
 
-These claude-ads skills and agents were added to this folder by Ads OS during setup.
+These claude-ads skills and agents were added to this folder by Agentic Ads during setup.
 
 - Made by: AgriciDaniel, $UPSTREAM_URL
 - Installed from: $FORK_URL
