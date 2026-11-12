@@ -6,7 +6,7 @@
     },
     "pipeline": {
       "repository": "georgecairns-ui/agentic-pipeline",
-      "commit": "df8af592d6fe047c998d491a748226fcd9a477ef"
+      "commit": "7923ebe39cddd0053101c13dc6a6064af889e0b3"
     },
     "skill-map": {
       "repository": "georgecairns-ui/agentic-skill-and-folder-map",
@@ -14,7 +14,7 @@
     },
     "proposals": {
       "repository": "georgecairns-ui/agentic-proposals",
-      "commit": "b3a1fe33b1ed7490bfe423617f124dbaa8f455ca"
+      "commit": "3a991ba3e89b04a9b37f7c0cdd7b504f685bf7e8"
     },
     "content": {
       "repository": "georgecairns-ui/agentic-content-machine",
