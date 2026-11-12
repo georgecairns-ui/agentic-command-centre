@@ -3,7 +3,9 @@
   ----------------
   Ties everything together:
   1. Connects to data/toolkit.json through the shared store, and reads apps/home/data/connections.json (the
-     shared file every tool reads since shared version 13) for which apps are connected.
+     shared file every tool reads since shared version 13) for which apps are connected. It also reads
+     Agentic Task List's apps/task-list/data/tasks.json, only for the business name at the top of the
+     sidebar (setup fills it there first, and Home shows the same one).
   2. Shows a short card until the app is running, then the app.
   3. Draws the 3 pages: Connections, Set up, and Build and customise, each with its own address
      (#connections, #setup, #build) in the sidebar and on the rail. Every move is a history entry, so Back
@@ -87,6 +89,21 @@
       if (data && !typing()) render();
     },
     onData: function (d) { M.setConnections(d.connections); if (data && !typing()) render(); }
+  }).start();
+
+  // The business name at the top of the sidebar, from Agentic Task List's file, worded as every tool words it.
+  // Read only: nothing here ever saves to that file. If it can't be read, the sidebar keeps "Your workspace".
+  window.TaskListOS.createStore({
+    moduleId: "task-list",
+    fileName: "tasks.json",
+    dataPaths: ["data", "", "apps/task-list/data"],
+    api: "/api/tasks",
+    validate: function (d) { if (!d || !Array.isArray(d.tasks)) throw new Error('The file has no "tasks" list.'); },
+    onStatus: function () {},
+    onData: function (d) {
+      const s = d.settings || {};
+      $("#businessName").textContent = s.businessName || (s.yourName ? s.yourName + "'s workspace" : "Your workspace");
+    }
   }).start();
 
   function friendlyError(err) {

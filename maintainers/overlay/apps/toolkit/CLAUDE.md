@@ -2,7 +2,7 @@
 
 This folder is the Toolkit app, the 8th section of the app in the Agentic Command Centre. It sits in the sidebar under the 7 tools as "Toolkit" and has 3 pages: **Connections**, **Set up** and **Build and customise**, plus 2 boxes on Home (**Next steps** and **Connections**). Its job is to make the kit proactive: every button hands you a job, so the person never has to know what to ask for. Read this file every time you work with the Toolkit or its data file.
 
-The app runs at **http://localhost:4747/toolkit/**, served by the helper in `apps/server/`. You (Claude) and the app share one file, `data/toolkit.json`. **You fill it; the app only ever changes an idea's status** (Not now). Which apps are connected comes from the shared `apps/home/data/connections.json` (see "Connections live in the shared file" below). The app picks up your changes within a few seconds.
+The app runs at **http://localhost:4747/toolkit/**, served by the helper in `apps/server/`. You (Claude) and the app share one file, `data/toolkit.json`. **You fill it; the app only ever changes an idea's status** (Not now). Which apps are connected comes from the shared `apps/home/data/connections.json` (see "Connections live in the shared file" below). The business name at the top of the sidebar comes from `settings.businessName` in `apps/task-list/data/tasks.json`, as on Home; the app never saves to that file. The app picks up your changes within a few seconds.
 
 ## How the buttons reach you
 
