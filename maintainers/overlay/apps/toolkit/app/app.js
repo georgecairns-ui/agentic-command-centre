@@ -467,6 +467,12 @@
     }).then(function (info) { C.setFolder(info.folder); redrawPage(); }).catch(function () {
       ui.toast("Open in Claude isn't available right now, so the buttons copy the prompt instead.", { icon: "info", duration: 7000 });
     });
+    // The booking link for Book a call (shared version 14). Without it the Connections page has no Book a call button.
+    fetch("../shared/catalogue.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : {}; }).then(function (cat) {
+      const b = cat && cat.booking;
+      C.setBooking(b && b.url ? window.TaskListOS.connections.bookingUrl(b.url, "toolkit") : null);
+      redrawPage();
+    }).catch(function () { C.setBooking(null); });
     // If Claude is already working on this tool's job (the page was reloaded), show the pill again
     fetch("/api/claude/status", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (st) {
       const name = /^toolkit:(.+)$/.exec(st.job || "");

@@ -22,16 +22,20 @@
     { id: "look", title: "Change the look", sub: "Your brand's colours, so the toolkit feels like yours.", icon: "sun", job: "Change the look of my toolkit to match my brand" },
     { id: "routine", title: "Automate a routine", sub: "Something Claude checks for you on a schedule.", icon: "clock", job: "Automate a routine: something Claude checks for me on a schedule" },
     { id: "team", title: "Add my team", sub: "Who does what, so tasks and drafts go to the right person.", icon: "users", job: "Add my team: who does what, so tasks and drafts go to the right person" },
-    { id: "next", title: "Ask Claude what to do next", sub: "The 3 things that would save you the most time.", icon: "sparkle" }
+    { id: "next", title: "Ask Claude what to do next", sub: "The 3 things that would save you the most time.", icon: "sparkle" },
+    { id: "where", title: "Choose where my toolkit lives", sub: "Today it runs only on this computer. Reach it from your phone or share it with your team.", icon: "external" },
+    { id: "learn", title: "Show me how to use Claude", sub: "A 10-minute walkthrough, day to day, with your own tools.", icon: "info" }
   ];
+  // Cards that open Claude with a fixed prompt: no "Describe it in a sentence" box
+  const FIXED = { next: function () { return M.prompt.whatsNext(); }, where: function () { return M.prompt.whereItLives(); }, learn: function () { return M.prompt.lesson(); } };
 
-  function cardPrompt(card, sentence) { return card.id === "next" ? M.prompt.whatsNext() : M.prompt.build(card.job, sentence); }
+  function cardPrompt(card, sentence) { return FIXED[card.id] ? FIXED[card.id]() : M.prompt.build(card.job, sentence); }
 
   // ---------- The pop-up ----------
   function dialog() { return document.getElementById("buildDialog"); }
   function openDialog(card) {
     const dlg = dialog();
-    const box = card.id !== "next";
+    const box = !FIXED[card.id];
     dlg.innerHTML = '<div class="modal__head"><h2 id="buildTitle">' + esc(card.title) + '</h2><button type="button" class="icon-btn" data-close aria-label="Close">' + icon("x") + "</button></div>" +
       '<div class="modal__body"><p class="muted">' + esc(card.sub) + "</p>" +
       (box ? '<label class="field"><span class="field__label">Describe it in a sentence</span><textarea class="input textarea" id="buildSentence" rows="3" placeholder="Optional. Claude asks you anything it needs."></textarea></label>' : "") +

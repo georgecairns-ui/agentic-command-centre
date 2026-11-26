@@ -58,13 +58,14 @@
     const s = window.TaskListOS.connections.counts({ connections: shared });
     const stat = s.total ? '<p class="hstat"><span class="hstat__num">' + s.connected + " of " + s.total + '</span><span class="hstat__label">connected</span></p>' :
       '<p class="hstat"><span class="hstat__label">Nothing connected yet</span></p>';
-    const attention = M.connectionsByUrgency(data).filter(function (x) { return x.status === "needs-attention"; })
-      .map(function (x) { return { name: x.app.name, prompt: M.prompt.fix(x.app) }; })
-      .concat(M.extras(data).filter(function (x) { return x.status === "needs-attention"; })
-        .map(function (x) { return { name: x.name, prompt: window.TaskListOS.connections.fixPrompt(x.name) }; }));
+    const CONNS = window.TaskListOS.connections;
+    const attention = M.connectionsByUrgency(data).filter(function (x) { return x.status === "needs-attention" || x.status === "waiting"; })
+      .map(function (x) { const w = x.status === "waiting"; return { name: x.app.name, sub: w ? M.connLabel(M.conn(data, x.app.id)) : "Needs attention", label: w ? "Finish connecting" : "Fix it", prompt: w ? M.prompt.finish(x.app) : M.prompt.fix(x.app) }; })
+      .concat(M.extras(data).filter(function (x) { return x.status === "needs-attention" || x.status === "waiting"; })
+        .map(function (x) { const w = x.status === "waiting"; return { name: x.name, sub: w ? CONNS.label(x) : "Needs attention", label: w ? "Finish connecting" : "Fix it", prompt: w ? CONNS.finishPrompt(x.name) : CONNS.fixPrompt(x.name) }; }));
     if (!attention.length) return stat + sub(s.connected ? "None need attention." : "Connect your email and calendar first. Open the page to see them all.");
     return stat + '<ul class="hlist" role="list">' + attention.slice(0, 3).map(function (x) {
-      return row(x.name, "Needs attention", "Fix it", x.prompt);
+      return row(x.name, x.sub, x.label, x.prompt);
     }).join("") + "</ul>" + (attention.length > 3 ? sub("and " + (attention.length - 3) + " more on the Connections page") : "") + note();
   }
 

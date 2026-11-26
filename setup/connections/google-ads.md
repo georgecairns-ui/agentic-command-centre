@@ -13,7 +13,7 @@ Before you begin, say in plain words: "Claude can read your Google Ads figures. 
 
 1. Say "Let's connect your Google Ads." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect"). If it isn't there, search Claude's connector directory (`search_mcp_registry` with "Google Ads") for a connector published by Google. If there isn't one, go to "If there's no connector".
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then **Google Ads**, then **Connect**. (To check: whether Google's own connection is listed there, and what it is called.)
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then **Google Ads**, then **Connect**. (To check: whether Google's own connection is listed there, and what it is called.)
 4. A Google window opens. Sign in with the Google account that manages their ads. Choose the ad account if Google asks; if they manage several, pick the one for this business. (To check.)
 5. Allow reading their Google Ads data when the permission screen asks. (To check what it says. Allow nothing that says edit or manage if there's a choice.)
 6. Look up the connections again. When Google Ads is there and on, go to "Prove it".

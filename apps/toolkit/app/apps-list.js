@@ -33,6 +33,7 @@
     // Sales and customers
     { id: "hubspot", name: "HubSpot", group: "Sales and customers", usedBy: ["task-list", "pipeline"], what: "Claude sees your contacts and deals, and spots the ones going quiet." },
     { id: "pipedrive", name: "Pipedrive", group: "Sales and customers", usedBy: ["task-list", "pipeline"], what: "Claude sees your contacts and deals, and spots the ones going quiet." },
+    { id: "folk", name: "folk", group: "Sales and customers", usedBy: ["task-list", "pipeline"], what: "Claude sees your contacts and deals, and spots the ones going quiet." },
     // Money
     { id: "xero", name: "Xero", group: "Money", usedBy: ["task-list", "money"], what: "Claude reads your invoices, bills and cash, so your money view stays up to date." },
     { id: "xero-drafts", name: "Xero drafts", group: "Money", usedBy: ["money"], what: "Optional: lets Claude put an invoice into Xero as a draft for you to check and send." },

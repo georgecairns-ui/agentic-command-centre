@@ -4,11 +4,11 @@ Goal: every app they named in step 1 that a tool needs is connected now, in one 
 
 ## 4.1 Make the list, with them
 
-Go through their answers in `setup/progress.md` ("Answers from step 1") and put each app they named in this table's order. Say the list back in one message, with a one-line reason each, and ask if anything should wait. Leave out anything no tool uses.
+Go through their answers in `setup/progress.md` ("Answers from step 1") and `context/tools.md`, and put each app they named in this table's order. Anything they said they already use to run the business (`setup/first-questions.md`: a CRM, their own dashboards, a task app) comes first, so the toolkit joins up with it rather than replacing it. Say the list back in one message, with a one-line reason each, and ask if anything should wait. Leave out anything no tool uses.
 
 | What it is | Apps | What it gives the toolkit | Guide |
 |---|---|---|---|
-| Customers and deals | HubSpot, Pipedrive | Deals come into Agentic Pipeline; follow-ups and quiet deals become tasks; contacts fill People | `setup/connections/hubspot.md`, `setup/connections/pipedrive.md` |
+| Customers and deals | HubSpot, Pipedrive, folk | Deals come into Agentic Pipeline; follow-ups and quiet deals become tasks; contacts fill People | `setup/connections/hubspot.md`, `setup/connections/pipedrive.md`, `setup/connections/folk.md` |
 | Accounts | Xero, QuickBooks | Agentic Money View reads invoices, bills and the bank; unpaid invoices become tasks to chase | `setup/connections/xero.md`, `setup/connections/quickbooks.md` |
 | Accounts not supported by Money View yet | FreeAgent, Sage | An export still helps the task list; say plainly that Money View can't use it yet | `setup/connections/freeagent.md`, `setup/connections/sage.md` |
 | The business bank | (inside their accounts app) | Money View sees the bank balance and payments; switched on later in Money View's own bank step | `setup/connections/bank-feeds.md` |
@@ -27,13 +27,13 @@ Social platforms (LinkedIn, Instagram, Facebook, TikTok and so on) wait for Agen
 
 For each app on the list, follow its guide and `.claude/skills/connect-a-tool`: find the route (our guide, or a search of Claude's connector directory), check, switch on or point to Connect, then prove it with one harmless read ("I can see 4 unpaid invoices, the oldest from 12 September", "I can see 2 Meta campaigns, both running"). Use the guide mode from `setup/progress.md` for how much to explain at a time.
 
-An app with no connector gets this sentence, word for word with its name: "There's no Claude connector for [app], so I can't connect to it live. If you export a CSV or PDF from it and drop it in the files folder, I'll read it whenever you ask." Record it as `export-only`. For FreeAgent, Sage and QuickBooks outside the US, say plainly too that Money View can't use an export: it needs a live connection to the accounts app.
+An app with no connector gets this sentence, word for word with its name: "There's no Claude connector for [app], so I can't connect to it live. If you export a CSV or PDF from it and drop it in the files folder, I'll read it whenever you ask." Record it as `export-only`, with what the app does for them in `note`. Then give the one-line book-a-call offer from `.claude/skills/connect-a-tool` (part 4), once: the Connections page has a **Book a call** button beside it too. For FreeAgent, Sage and QuickBooks outside the US, say plainly too that Money View can't use an export: it needs a live connection to the accounts app.
 
 Meta ads: connect for reading now. The tool's own step (`setup/ads-02-where-your-ads-are.md`) explains what building campaigns means and asks before anything more.
 
 ## 4.3 Record
 
-Each app goes into `apps/home/data/connections.json` and `context/tools.md` (see `connect-a-tool`, part 3), with what you may and may not do. An app that still won't connect after the loop is `needs-attention`, with what went wrong in `note`: the Connections page and the Connections box on Home show a **Fix it** button for it, so setup doesn't stall on it. An app they decided to leave: `not-used`. Apps they named but chose to connect later stay `not-connected` with the note "Chose not to connect yet". Tick step 4.
+Each app goes into `apps/home/data/connections.json` and `context/tools.md` (see `connect-a-tool`, part 3), with what you may and may not do. An app that's waiting on someone else (their Claude Owner has to add it, say) is parked as `waiting`, with `waitingOn`, and you go on to the next app: the Connections page shows a **Finish connecting** button for it. An app that still won't connect after the loop is `needs-attention`, with what went wrong in `note`: the Connections page and the Connections box on Home show a **Fix it** button for it, so setup doesn't stall on it. An app they decided to leave: `not-used`. Apps they named but chose to connect later stay `not-connected` with the note "Chose not to connect yet". Tick step 4.
 
 ## What to say
 

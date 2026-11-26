@@ -25,15 +25,15 @@ The last part of the app's menu is where your toolkit grows with you. You don't 
 
 - **Connections:** every app the toolkit can use (email, calendar, call recorder, CRM, accounts, ads, files, team chat), whether it's connected, which tools use it, and a **Connect** button.
 - **Set up:** each tool's status. Anything you left for later has a **Set up now** button.
-- **Build and customise:** **Build me a new page**, **Add a skill for a job I repeat**, **Change how something works**, **Change the look**, **Automate a routine**, **Add my team**. Below them, Claude's own ideas for what would save you the most time next, each with a **Do it** button.
+- **Build and customise:** **Build me a new page**, **Add a skill for a job I repeat**, **Change how something works**, **Change the look**, **Automate a routine**, **Add my team**, **Choose where my toolkit lives** (reach it from your phone or share it with your team) and **Show me how to use Claude**. Below them, Claude's own ideas for what would save you the most time next, each with a **Do it** button.
 
 Every button opens Claude with the job already typed in. Press Enter and it gets on with it.
 
-## What happens when you type /setup
+## What happens when setup starts
 
-Claude asks **one message of questions** covering every tool: your email, calls, the apps you use, your website and logo, and which tools matter most to you right now. Then it:
+Claude asks a few quick questions covering every tool: what you want to achieve, your email addresses, calls, the apps you already use, your website and logo, and which tools matter most to you right now. With your OK it looks through your files and website for the rest and shows you what it found, so you only answer what it couldn't find. You can talk your answers instead of typing. Then it:
 
-- **Connects your apps once.** Email and calendar first, then your call recorder, CRM, accounts, ad accounts and the rest, one by one, mostly sign in and approve. Claude checks each connection itself and proves it with a real read, then reads your last 30 days of email once, so your task list, pipeline and client folders all start full.
+- **Connects your apps once.** Every work inbox and calendar first, then your call recorder, CRM, accounts, ad accounts and the rest, one by one, mostly sign in and approve. Claude checks each connection itself and proves it with a real read, then reads your last 30 days of email once, so your task list, pipeline and client folders all start full. If one has to wait for your IT team to approve it, Claude parks it and carries on with the rest.
 - **Learns your business once.** What you sell, who to, how a sale goes, how you write, your brand. Every tool uses the same notes, so you never answer the same question twice.
 - **Builds you your own skills** for how your business works, saved so you can add them to Claude everywhere.
 - **Sets up each tool in your order.** Your task list and pipeline first, then the rest. Each one fills with your real work as it goes.
@@ -44,20 +44,20 @@ Doing everything takes about 2 hours. You can stop after any tool: the app works
 ## What you need
 
 - **The Claude desktop app** (setup runs in its Code tab).
-- **A paid Claude plan (Pro or Max)**, signed in to the desktop app. Your email, calendar and app connections come from your Claude account, so Claude can only use them when you're signed in.
+- **A paid Claude plan (Pro, Max, Team or Enterprise)**, signed in to the desktop app. Your email, calendar and app connections come from your Claude account, so Claude can only use them when you're signed in. On Team and Enterprise, your administrator may need to approve connections, and the screens may look a little different.
 - Nothing else to install in most cases. The app runs on your own computer using Node (Claude installs it for you if it's missing, with your permission).
 
 ## Get started
 
 1. **Open the Claude desktop app and choose the Code tab.** Any folder will do for this first step.
 2. **Ask Claude to fetch the kit.** Paste this:
-   > Copy the Agentic Command Centre from https://github.com/georgecairns-ui/agentic-command-centre into a folder called "Agentic Command Centre" in my Documents, using the copy line in its START-HERE.md (not git), then tell me how to open it and set it up.
+   > Copy the Agentic Command Centre from https://github.com/georgecairns-ui/agentic-command-centre into a folder called "Agentic Command Centre" in my Documents, using the copy line in its START-HERE.md (not git). Then tell me how to open that folder in the Code tab, so setup starts there.
 
-   Claude copies everything onto your computer and tells you how to open the new folder. In the desktop app, you choose the folder in the Code tab.
+   Claude copies everything onto your computer and tells you how to open the new folder. In the desktop app, you choose the folder in the Code tab. Any wording works: "install and run" with the link does the same.
 
    *For Claude, if this README is all you have:* read START-HERE.md on the repository page at https://github.com/georgecairns-ui/agentic-command-centre, then copy the folder with the Mac or Windows line in it.
 3. **In the Code tab, choose the Agentic Command Centre folder and pick "Yes, I trust this folder".** The first time, the app asks whether you trust the folder and warns that it pre-approves some permissions. Those permissions only let Claude update your app, your business notes and your files folder, search the web and start the app, without stopping to ask each time. It still can't send, delete or change anything in your email or other apps.
-4. **Type `/setup`.**
+4. **Type anything, even "hello".** Setup starts on its own. (Or type `/setup`.)
 
 When it's done, your app is at **http://localhost:4747**. Bookmark it.
 
@@ -78,7 +78,7 @@ Apps connect through Claude's Connectors: each one asks you to sign in on that a
 
 ## Your information
 
-Everything lives in this folder on your computer. Claude reads your apps through the connections you approve and only ever reads and drafts, apart from the few things a tool does when you press its button and say yes (sending an email you approved, putting an invoice into your accounts as a draft, building an ad campaign switched off). Nothing ever moves money. There's no account or server; Get AI Powers can't see any of it. Read [docs/PRIVACY-AND-SAFETY.md](docs/PRIVACY-AND-SAFETY.md) for the detail.
+Everything lives in this folder on your computer. Claude reads your apps through the connections you approve and only ever reads and drafts, apart from the few things a tool does when you press its button and say yes (sending an email you approved, putting an invoice into your accounts as a draft, building an ad campaign switched off). Nothing ever moves money. There's no account or server; Get AI Powers can't see any of it. It runs only on your computer until you choose otherwise: **Choose where my toolkit lives**, on the Toolkit's Build and customise page, has Claude build it in your own accounts (a page inside Claude, GitHub, Cloudflare, Supabase or somewhere else), always private and behind a sign-in. Read [docs/PRIVACY-AND-SAFETY.md](docs/PRIVACY-AND-SAFETY.md) for the detail.
 
 ## Licence
 

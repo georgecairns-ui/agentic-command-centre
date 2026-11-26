@@ -55,7 +55,7 @@ The date the daily check-in last ran: set by `.claude/skills/toolkit-check-in` a
 
 Since shared version 13, which apps Claude can reach is in `apps/home/data/connections.json`, the one file every tool reads (its format is in `setup/connections/README.md`, "Recording a connection"). The Connections page and the Home box read it. There is no `connections` part in `data/toolkit.json` any more: if an older copy still has one, leave it, the app ignores it.
 
-The page shows a card for each app in `app/apps-list.js` (24 of them, from `gmail-and-google-calendar` to `calendly`), keyed by the guide's file name in `setup/connections/` without `.md`, the same key `connections.json` uses. An app with no row counts as Not connected.
+The page shows a card for each app in `app/apps-list.js` (25 of them, from `gmail-and-google-calendar` to `calendly`), keyed by the guide's file name in `setup/connections/` without `.md`, the same key `connections.json` uses. An app with no row counts as Not connected.
 
 ```json
 "xero": { "name": "Xero", "status": "connected", "how": "Claude connector: Xero", "checked": "2026-10-26", "note": "Read invoices, bills, contacts and reports." }
@@ -63,7 +63,7 @@ The page shows a card for each app in `app/apps-list.js` (24 of them, from `gmai
 
 | Field | What it holds |
 |---|---|
-| `status` | `connected` (a real read worked on the `checked` date), `needs-attention` (it was connected and now fails, or needs the person to do something), `export-only` (no connector, or one that can only post; you read an export from `files/`), `no-connector` (no connector and they don't want to export), `not-connected`, `not-used` (the person said they don't use this app). |
+| `status` | `connected` (a real read worked on the `checked` date), `needs-attention` (it was connected and now fails, or needs the person to do something), `waiting` (parked until someone else acts, such as their IT team approving it, named in `waitingOn`; the page shows "Waiting on IT" and a **Finish connecting** button), `export-only` (no connector, or one that can only post; you read an export from `files/`), `no-connector` (no connector and they don't want to export; the page shows "Not supported yet"), `not-connected`, `not-used` (the person said they don't use this app). |
 | `how` | The route in a few words ("Claude connector: Xero", "CSV export into files/"). Never a key. |
 | `note` | One plain line the person will read on the card, mostly for `needs-attention`: what's wrong and what they'll need ("Xero asked you to sign in again"). |
 | `checked` | The date of the last real read that worked. Required for `connected`; the app refuses `connected` without one. |
@@ -71,6 +71,8 @@ The page shows a card for each app in `app/apps-list.js` (24 of them, from `gmai
 When you update it:
 
 - **Connect** (the button, or the person asks): follow the app's guide and `.claude/skills/connect-a-tool`: check the connection status yourself, switch it on or point them to Connect, prove it with one harmless read, then record it. Set `connected` only after that read worked. An app with no connector gets the no-connector sentence from `connect-a-tool` and `export-only`. If it still won't connect after the loop, `needs-attention` with a `note`. If they say they don't use it, `not-used`.
+- **Finish connecting** (a `waiting` row, once it's sorted): follow `.claude/skills/connect-a-tool`, "Waiting on someone else": connect it, prove it, read what setup would have read from it, then set `connected`.
+- **Book a call** (beside `no-connector` and `export-only` apps, and on the page): opens Get AI Powers' booking link from `apps/shared/catalogue.json`. Nothing for you to do.
 - **Check it**: use the connection, tell them in 1 or 2 lines what you can see, and set `checked` to today. If it fails, set `needs-attention` with a `note` and keep the old `checked`.
 - **Fix it**: follow `connect-a-tool` and the guide to fix it, then `connected` with today's `checked`, and clear the `note`.
 - **Whenever a connection fails during any other job** (a tool's check-in, a refresh), set it to `needs-attention` with a `note`, so Home shows it first.

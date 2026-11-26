@@ -1,6 +1,6 @@
 # Start here
 
-> **If you're a person reading this:** you don't need to do anything in this file. Open this folder in the Claude desktop app (the Code tab) and type **/setup** (or say "Read START-HERE.md and set me up"). Claude asks you one message of questions, connects the apps you use, learns your business once, then sets up each tool in the order that matters most to you. The first time you open the folder, the app asks whether you trust it: choose **Yes, I trust this folder**. That lets Claude update your app and notes without asking every time; it still can't send or delete anything.
+> **If you're a person reading this:** you don't need to do anything in this file. Open this folder in the Claude desktop app (the Code tab) and type anything, even "hello". Setup starts from there. (Or type **/setup**.) Claude asks you a few quick questions, connects the apps you use, learns your business once, then sets up each tool in the order that matters most to you. The first time you open the folder, the app asks whether you trust it: choose **Yes, I trust this folder**. That lets Claude update your app and notes without asking every time; it still can't send or delete anything.
 
 ---
 
@@ -14,7 +14,9 @@
 
   The download is kept in `setup/as-installed/` on purpose: it is what lets you bring this folder up to date later, without losing anything of theirs (the `get-updates` skill).
 
-  If you've already copied it another way (for example with `git clone`, or into a different folder), that's fine: use that folder. Then give them the steps to open it: in the Claude desktop app, open the Code tab, choose that folder, pick "Yes, I trust this folder", then type `/setup`. Stop there; don't start the setup from the wrong folder.
+  If you've already copied it another way (for example with `git clone`, or into a different folder), that's fine: use that folder.
+
+  Once it's copied, give them the steps to open it, whatever wording they used to ask ("install and run" with the link works the same): in the Claude desktop app, open the Code tab, choose the Agentic Command Centre folder, pick "Yes, I trust this folder", then type anything, even "hello". Setup starts there on its own. Stop there; don't start the setup from the wrong folder.
 
 ## What the Agentic Command Centre is
 
@@ -40,11 +42,13 @@ It all runs as one app on their computer at **http://localhost:4747**: Home (a d
 
    | Guide mode | How you guide |
    |---|---|
-   | beginner | One step per message. Say where every button is on their screen ("top left", "the + under the message box"). Plain words only: "connection", never MCP, API, JSON or repo. Check each thing worked before the next, and say what you just did |
+   | beginner | One step per message. Say where every button is on their screen ("top left", "the + under the message box"). Plain words only: "connection", never MCP, API, JSON or repo. Check each thing worked before the next, and say what you just did. End each step with one "You just learned" line from `setup/learn-as-you-go.md` |
    | some | 2 or 3 steps per message, and a check after each connection |
    | confident | Batch it, email and calendar first, then the rest: "Connect your email and calendar, then your accounts app and your ad accounts, in Connectors, and tell me when they're done", then check them all at once |
 
-   The guide mode changes the pace and how much you explain. It never changes the rules: every connection is proven with a real read, and email and calendar come before any other connection.
+   The guide mode changes the pace and how much you explain. It never changes the rules: every connection is proven with a real read, and you ask about email and calendar before any other connection.
+
+   Straight after the guide mode question (or, if it was already answered, in your first message), say this line: "Tell me anything as we go, even small stuff, the way you'd tell a colleague. 'My IT team has to approve that' or 'I use 2 emails' is exactly what I need."
 3. Read `setup/progress.md`. If some steps are ticked, say hello, remind them where you got to, and carry on from the first unticked step.
 4. Read `CLAUDE.md` in this folder: the standing rules.
 5. If setup is already complete, don't run it again. Ask what they'd like to do. If they ask to set up one tool, run just that tool's part below. If steps 1 and 2 in `setup/progress.md` aren't ticked, run Part 1 from its first unticked step first, and say so in one line.
@@ -65,8 +69,8 @@ It all runs as one app on their computer at **http://localhost:4747**: Home (a d
 
 | Step | File | What happens | Their time |
 |---|---|---|---|
-| 1 | `setup/toolkit-01-quick-questions.md` | One message of questions covering every tool: email, calendar, calls, the apps they use, website, logo, hours, team, and which tools matter most to them now | 3 min |
-| 2 | `setup/02-connect-email-and-calendar.md` | Connect email and calendar, prove both, and read the last 30 days once for every tool: the task list, the pipeline and the client folders. Nothing else happens until this is done | 5 to 10 min |
+| 1 | `setup/toolkit-01-quick-questions.md` | `setup/first-questions.md` first (their plan, files, every email address, what they already use, their goal, then you look for the rest yourself and show them what you found), then the questions every tool needs: calls, accounts, ads, posting, logo, hours, team, and which tools matter most to them now | 8 min |
+| 2 | `setup/02-connect-email-and-calendar.md` | Connect every inbox and calendar, prove each, and read the last 30 days once for every tool: the task list, the pipeline and the client folders. One waiting on their IT team is parked, not a reason to stop | 5 to 10 min |
 | 3 | `setup/03-connect-call-recordings.md` | Connect their call recorder, if they have one | 2 min |
 | 4 | `setup/toolkit-02-connect-the-rest.md` | Connect every other app they named, once, through Claude's Connectors (no keys), and prove each: customers and sales, accounts and bank feed, ad accounts, files, team chat, bookings | 5 to 10 min |
 | 5 | `setup/05-get-to-know-the-business.md` | Fill in your notes from their email, learn how they write, and make the app look like their brand (from their website or brand guidelines) | 5 min |
@@ -111,13 +115,15 @@ Run the tools they chose in step 1, in the order they chose. Agentic Task List a
 | Step | File | What happens | Their time |
 |---|---|---|---|
 | 8 | `setup/toolkit-03-make-it-automatic.md` | You agree the check-in times (or they skip it), Claude lets check-ins read without stopping, creates the one check-in for every tool and proves it runs | 2 min |
-| 9 | `setup/toolkit-04-check-and-hand-over.md` | Check every tool works, then hand over with one summary of everything you did and a tour of the Toolkit page | 3 min |
+| 9 | `setup/toolkit-04-check-and-hand-over.md` | Check every tool works, then hand over with their goal, one summary of everything you did and a tour of the Toolkit page. Offer to choose where it lives (`.claude/skills/choose-where-it-lives`) and the 10-minute lesson | 3 min |
 
-Start by telling them what's about to happen, in 3 short lines: one message of questions, then you connect what they use and learn the business once, then you set up each tool in the order that matters to them, starting with their task list. Say the whole toolkit takes about 2 hours if they do everything today, and that they can stop after any tool and pick up where they left off another day: their app works from the first tool onwards. Then begin step 1.
+Start by telling them what's about to happen, in 3 short lines: a few quick questions, then you connect what they use and learn the business once, then you set up each tool in the order that matters to them, starting with their task list. Say the whole toolkit takes about 2 hours if they do everything today, and that they can stop after any tool and pick up where they left off another day: their app works from the first tool onwards. Then begin step 1.
 
 This setup is their first proper look at what Claude can do. Do as much as you can yourself, ask as little as possible, and keep a running count of what you've done (emails sorted, drafts written, calls written up, deals found, proposals written, posts planned, skills built) for the hand-over.
 
-After each step: tick it in `setup/progress.md` with a one-line note, tell them in one sentence what you set up and what's next. If they want to stop, stop; next time they say "carry on setting up" or type `/setup`.
+After each step: tick it in `setup/progress.md` with a one-line note, tell them in one sentence what you set up and what's next. In beginner mode, add the "You just learned" line for that step (`setup/learn-as-you-go.md`). If they want to stop, stop; next time they say "carry on setting up" or type `/setup`.
+
+Whenever they hesitate, skip a question, say "I don't know" or hit a blocker, invite them to tell you more, in one line that fits the moment: "What's getting in the way? Tell me like you'd tell me over a coffee."
 
 ## Ground rules for the whole setup
 
@@ -127,6 +133,8 @@ These don't bend, whatever is asked later.
 - **You propose, they approve.** Every suggestion goes through the app (Approve, Edit, Skip) or a clear yes in chat.
 - **No passwords or keys in chat or in this folder.** People sign in on each app's own screen, through Claude's Connectors. Setup never uses keys. (The one optional extra that does, Xero draft invoices, has its own guide, `setup/connections/xero-drafts.md`. It is only offered when they ask for it.) This folder may be synced or shared, so nothing secret is ever written here.
 - **Only connect what helps.** Ask before connecting anything. If an app doesn't help any tool they've chosen, say so and leave it.
+- **Waiting on someone else doesn't stop setup.** When a connection needs their IT administrator, their Claude Owner or a password reset, park it as `waiting` (`.claude/skills/connect-a-tool`, "Waiting on someone else"), connect what they can now, and go on to the next step.
+- **Keep track of what they promise to share.** Every file they say they'll share goes under "Files you said you'd share" in `setup/progress.md`. Look for it yourself first, and repeat the list back before each new step (`setup/first-questions.md`, section 4).
 - **Be honest about what you can reach.** Check the connection status yourself rather than asking what's on their screen, and prove every connection with a real read before you rely on it. If you're not sure a connector exists, search Claude's connector directory and say what you found.
 
 ## How to talk to them

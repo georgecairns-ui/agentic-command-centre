@@ -6,6 +6,8 @@ Setup status: not started
 
 Guide mode: not asked yet
 
+Claude plan: not asked yet
+
 ## Part 1: once, for every tool
 
 - [ ] 1. Quick questions (every tool at once)
@@ -31,6 +33,10 @@ Guide mode: not asked yet
 ## Answers from step 1
 
 (Claude: every answer from step 1, one short line each, in their words. Read this before asking any question in any later step.)
+
+## Files you said you'd share
+
+(Claude: each file they said they'd share, what it's for, and `to find`, `found` or `added`. See `setup/first-questions.md`, section 4.)
 
 ## Notes for next time
 

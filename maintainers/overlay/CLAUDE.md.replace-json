@@ -34,5 +34,13 @@
   [
     "## The task list, day to day",
     "## Agentic Task List, day to day"
+  ],
+  [
+    "(\"Let's get you set up, it takes about 30 to 40 minutes\")",
+    "(\"Let's get you set up. Your task list and pipeline take about 30 minutes, and you can stop after any tool.\")"
+  ],
+  [
+    "| \"Show me how to use Claude\" | The 10-minute lesson in `setup/learn-as-you-go.md` |",
+    "| \"Show me how to use Claude\" | The 10-minute lesson in `setup/learn-as-you-go.md` |\n| \"Can I use this on my phone?\", \"can my team see it?\", \"where should this live?\" | `.claude/skills/choose-where-it-lives` |"
   ]
 ]

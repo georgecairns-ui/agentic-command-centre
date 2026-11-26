@@ -26,6 +26,12 @@ Meta first, then Google. Offer each one in a line first. It's their choice: if t
 
 For each, follow its guide and `.claude/skills/connect-a-tool`: look up this session's connections (`session_connectors_status`), then switch it on, reconnect it or point them to Connect, by the table in `connect-a-tool` ("Check, switch on, or point to Connect"). Never ask what's on their screen: you can see the status yourself. Keep going round until it's on. Say "a connection", never MCP, API, JSON or repo. Use only the connector or address in the guide, never another company's ads connector.
 
+If a connection needs their IT administrator or their Claude Owner to approve it first, park it as `waiting` (`.claude/skills/connect-a-tool`, "Waiting on someone else"), offer the report for that platform in the meantime (part 4), and go on to the next platform.
+
+## 2a. What they already use
+
+Anything they said they already use to run their ads or follow up enquiries (`setup/first-questions.md`: a CRM, their own dashboards or reports) comes next, after Meta and Google, so Agentic Ads joins up with it rather than replacing it. Offer each one in a line. For each they want, follow its guide in `setup/connections/` (folk, HubSpot and Pipedrive have one) and `.claude/skills/connect-a-tool`, and read only. If it has no connector, give the no-connector sentence (part 4), record it as `export-only` with what the app does for them in `note`, then give the one-line book-a-call offer from `.claude/skills/connect-a-tool` (part 4), once.
+
 ## 3. Prove each connection with one read
 
 For each connection, follow `.claude/skills/build-in-account/references/connections.md` (read only), say what you're about to read, and read **only** the account name and its spend over the last 7 days. Say what you found ("I can see the ad account Marlow Dental, which spent £312 in the last 7 days"). Check the account name matches. Only after a read works, record it (part 5).
@@ -46,7 +52,7 @@ Use the same report for a platform they chose not to connect yet.
 
 ## 5. Record it
 
-- `apps/home/data/connections.json` (format in `setup/connections/README.md`, "Recording a connection"): create it if it isn't there, as `{ "version": 1, "connections": {} }`. One row per platform, with the key and wording its guide gives (`meta-ads`, `google-ads`): `connected` with today's date in `checked` only after the read in part 3 worked; `export-only` where there's no connector; `not-connected` with the note "Chose not to connect yet" if they'd rather not connect it now; `not-used` for a platform they don't use.
+- `apps/home/data/connections.json` (format in `setup/connections/README.md`, "Recording a connection"): create it if it isn't there, as `{ "version": 1, "connections": {} }`. One row per platform, with the key and wording its guide gives (`meta-ads`, `google-ads`): `connected` with today's date in `checked` only after the read in part 3 worked; `export-only` where there's no connector; `waiting` with `waitingOn` and the one thing still to do in `note`, for one parked in part 2; `not-connected` with the note "Chose not to connect yet" if they'd rather not connect it now; `not-used` for a platform they don't use. Anything from part 2a gets its own row the same way.
 - `context/tools.md`: each connection as its guide says: what Claude may do (read; for Meta, create campaigns that are paused, and make one change you approved in the app: switch on, pause or change a daily budget) and what it never does (act on its own, go over your limits, delete, or change anything on Google).
 
 ## 6. If it still won't connect
