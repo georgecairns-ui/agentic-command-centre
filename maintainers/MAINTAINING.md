@@ -41,6 +41,18 @@ From shared version 11 the helper (`apps/server/server.js` and `server.py`) read
 - **The kit's merged setup keeps every v13 guarantee:** the desktop-app check and guide mode in `START-HERE.md`; email and calendar as the hard gate in step 2, with the overlay's 2.4 (`setup/02-connect-email-and-calendar.md.replace-json`) reading the last 30 days once for the task list, the pipeline and the client folders; every other app through `connect-a-tool` in `setup/toolkit-02-connect-the-rest.md`; and one scheduled check-in in `setup/toolkit-03-make-it-automatic.md` that covers every tool's own check-in or refresh. No Meta Ads or Google Ads tool is ever pre-approved, so Agentic Ads isn't part of a scheduled run.
 - **`check.py` runs the tools' shared version 13 phrase rule on the built kit:** no giving up on a connection in the files that connect apps (including `setup/toolkit-02-connect-the-rest.md` and `setup/toolkit-03-make-it-automatic.md`), and no keys, `claude mcp add` or GitHub sign-in in `START-HERE.md`, `README.md`, `setup/`, `connect-a-tool` or `get-updates` (`setup/connections/xero-drafts.md` is the one exception).
 
+## Shared version 14: first-timer setup
+
+From the change request of 26 November 2026 (Drive `specs/2026-11-26-first-timer-setup-change-request.md`, revision 3). The tools' part is in each tool's `maintainers/SHARED-V14-CHANGES.md`. The kit's own part, in the overlay:
+
+- **Setup starts on their first message** (`START-HERE.md`, `README.md`'s paste prompt, the `CLAUDE.md.replace-json` setup line). Claude never speaks first in the Code tab, so the person types anything ("hello") in the new folder.
+- **`setup/toolkit-01-quick-questions.md`** runs `setup/first-questions.md` first and asks only the toolkit's own questions after it. **`setup/toolkit-02-connect-the-rest.md`** puts what they already use first, parks `waiting` apps and gives the book-a-call line. **`setup/toolkit-04-check-and-hand-over.md`** opens with their goal, lists what's waiting and files still to find, and offers where it lives and the 10-minute lesson.
+- **`setup/02-connect-email-and-calendar.md.replace-json`** keeps the kit's "read 30 days once for every tool", now for every inbox and every calendar.
+- **The Toolkit app:** `waiting` rows show "Waiting on IT" with **Finish connecting**; `no-connector` and `export-only` rows get **Book a call** (the catalogue's `booking.url`, tagged `utm_source=toolkit&utm_medium=app&utm_campaign=join-it-up`); Build and customise has **Choose where my toolkit lives** and **Show me how to use Claude**; folk has a card.
+- **`.claude/skills/choose-where-it-lives`** (CR-8): the open questions, the rules every route follows (private, copy first, their accounts, cost before anything), and a page per route in `references/`. The repository is a harness: Claude builds it in the customer's own accounts. Every route page must be checked against the real service before it's relied on (sources and dates are at the bottom of each). The first route is offered as "A page inside Claude", because customers are never told "artifact".
+- **`whats-next`** ranks ideas by their goal; **`toolkit-check-in`** opens with a goal line.
+- `check.py` leaves `setup/connections/where-to-click.md` out of the "every guide has a card" rule: it's where Connectors are on each plan, not an app.
+
 ## Releasing
 
 1. `git fetch` in each tool's repository is done by the build. Make sure any tool change you want is merged on GitHub first.
