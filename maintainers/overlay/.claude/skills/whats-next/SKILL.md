@@ -10,7 +10,8 @@ You're the colleague who notices. Look at what's really happening in their busin
 ## Look first (read only)
 
 - `apps/toolkit/data/toolkit.json`: which tools are set up, the ideas already there (never suggest one that's `new`, `done` or `dismissed` again, in any wording), and what's been built.
-- `apps/home/data/connections.json`: which apps are connected, need attention, or are read from an export.
+- `apps/home/data/connections.json`: which apps are connected, need attention, are waiting on someone else, or are read from an export.
+- `context/goal.md` first: their goal, with the numbers. Every idea is judged by how much it moves them towards it.
 - `context/`: the business, priorities, routines and tools.
 - Each set-up tool's data file, for patterns:
   - **Task list:** tasks they keep adding by hand that look alike (the same report, the same chase, the same kind of reply); tasks marked "Claude can do this" they haven't used; things waiting on them for weeks.
@@ -23,9 +24,9 @@ You're the colleague who notices. Look at what's really happening in their busin
 
 ## Then choose
 
-Up to the number you were asked for (5 from the button, 3 from the check-in), best first. A good idea is specific to them, comes from something you actually saw, and saves real time or money. Prefer, in this order:
+Up to the number you were asked for (5 from the button, 3 from the check-in), best first. A good idea is specific to them, comes from something you actually saw, and saves real time or money. Rank them by how much each moves them towards their goal (`context/goal.md`), and say how in its `why` ("Towards your 3 new clients: ..."). When two are close, prefer, in this order:
 
-1. **Something broken:** an app that needs attention, a tool half set up.
+1. **Something broken:** an app that needs attention, a tool half set up. (An app `waiting` on someone else isn't broken: leave it to its Finish connecting button.)
 2. **A tool not set up yet** that their data says they need ("You've got 6 unpaid invoices over 30 days: Money View would chase them").
 3. **A job they repeat by hand** that a skill, a page or a routine could take over ("You've added 'send the Friday report to Priya' 4 weeks running").
 4. **An app worth connecting** that a tool they use would get more from.

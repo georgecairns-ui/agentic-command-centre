@@ -13,7 +13,7 @@ Before you begin, say in plain words: "Claude can read your ads and make new cam
 
 1. Say "Let's connect your Meta ads." Say "connect" and "a connection", never MCP, API, JSON or repo.
 2. Look up this session's connections (`session_connectors_status`) and follow the table in `.claude/skills/connect-a-tool` ("Check, switch on, or point to Connect").
-3. If they need to add it: in the Claude desktop app, Customize, then Connectors, then the + button, then **Add custom connector**. (To check: it may be under a "Browse connectors" page.) In the name box type `Meta Ads`. In the address box use exactly `https://mcp.facebook.com/ads`. Press **Add**. (To check.)
+3. If they need to add it: open Connectors (`setup/connections/where-to-click.md` says where, for their plan), then the + button, then **Add custom connector**. (To check: it may be under a "Browse connectors" page.) In the name box type `Meta Ads`. In the address box use exactly `https://mcp.facebook.com/ads`. Press **Add**. (To check.)
 4. Press **Connect** next to Meta Ads. A Facebook window opens. Sign in with the Facebook business login that manages their ads. (To check.)
 5. Choose the business and the ad account they want Claude to use. If Meta asks which permissions to allow, allow reading their ads. Allow creating ads too if they want Claude to build campaigns for them, and changing ads if they want Claude to switch on, pause or change the budget of a campaign when they press the button in the app. (To check what the permission screen says.) Press Continue or Allow. (To check.)
 6. Look up the connections again. When Meta Ads is there and on, go to "Prove it".

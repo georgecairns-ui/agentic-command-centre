@@ -28,6 +28,16 @@
   function setFolder(f) { kitFolder = f || null; }
   function folder() { return kitFolder; }
 
+  // ---------- Book a call (shared version 14) ----------
+  // Set by app.js from apps/shared/catalogue.json's booking link, tagged for this page. Without it, no button.
+  let booking = null;
+  function setBooking(url) { booking = url || null; }
+  function bookCall(opts) {
+    if (!booking) return "";
+    const o = opts || {};
+    return '<a class="btn' + (o.small ? " btn--sm" : "") + '" href="' + esc(booking) + '" target="_blank" rel="noopener" title="Want this joined up with something you already use? Book a call with Joey or George">' + icon("calendar") + "Book a call</a>";
+  }
+
   // ---------- The first-time note ----------
   // Remembered in this browser only, so a new browser shows it once more. Nothing depends on it.
   const SEEN_KEY = "tk-claude-note-seen";
@@ -86,7 +96,7 @@
   }
 
   window.TK.components = {
-    ART: ART, setFolder: setFolder, folder: folder, markSeen: markSeen, claudeNote: claudeNote, claudeActions: claudeActions,
+    ART: ART, setFolder: setFolder, folder: folder, setBooking: setBooking, bookCall: bookCall, markSeen: markSeen, claudeNote: claudeNote, claudeActions: claudeActions,
     statusChip: statusChip, shortDate: shortDate, emptyState: emptyState, say: say, pageHead: pageHead, failed: failed
   };
 })();

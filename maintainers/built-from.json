@@ -2,38 +2,38 @@
   "tools": {
     "task-list": {
       "repository": "georgecairns-ui/agentic-task-list",
-      "commit": "ec44ad4bfed4c8b234817ad2fc929bc2436003c0"
+      "commit": "edfc06335897c2b1d0000212ce0e0613b4fdaf73"
     },
     "pipeline": {
       "repository": "georgecairns-ui/agentic-pipeline",
-      "commit": "7923ebe39cddd0053101c13dc6a6064af889e0b3"
+      "commit": "55b2543e2417b078bd8336fe18f58832bd072778"
     },
     "skill-map": {
       "repository": "georgecairns-ui/agentic-skill-and-folder-map",
-      "commit": "35d1f9a718476fce82614cdcb2e45008618575b8"
+      "commit": "2dee5f3b3504367a4edbc3e70027e9c7423bd653"
     },
     "proposals": {
       "repository": "georgecairns-ui/agentic-proposals",
-      "commit": "3a991ba3e89b04a9b37f7c0cdd7b504f685bf7e8"
+      "commit": "e241ff1fd42d051e41f223ea06272430eccdf6ad"
     },
     "content": {
       "repository": "georgecairns-ui/agentic-content-machine",
-      "commit": "69ddda1234460f04909bdfde7fa65dc5f9ebaaae"
+      "commit": "cf7d63879184851417e43cae2c2bb6aa0e9bf984"
     },
     "money": {
       "repository": "georgecairns-ui/agentic-money-view",
-      "commit": "34ad14aa3eb27804314048a6b2ca858dad1cb686"
+      "commit": "1ccbf0c8c5d199ce5b6296cd7ee82ed97f25b062"
     },
     "ads": {
       "repository": "georgecairns-ui/agentic-ads",
-      "commit": "768847b825c4a5f65c818d223874d55021c3ec78"
+      "commit": "65e9152e842d10ab47e0f5a08a25a8b21fc0e34e"
     }
   },
   "attach": [
     {
       "tool": "pipeline",
       "filesAdded": 33,
-      "alreadyThere": 99,
+      "alreadyThere": 104,
       "permissionsAdded": [
         "Edit(./apps/pipeline/data/**)",
         "Write(./apps/pipeline/data/**)"
@@ -43,7 +43,7 @@
     {
       "tool": "skill-map",
       "filesAdded": 43,
-      "alreadyThere": 93,
+      "alreadyThere": 98,
       "permissionsAdded": [
         "Edit(./apps/skill-map/data/**)",
         "Write(./apps/skill-map/data/**)",
@@ -67,7 +67,7 @@
     {
       "tool": "proposals",
       "filesAdded": 36,
-      "alreadyThere": 100,
+      "alreadyThere": 105,
       "permissionsAdded": [
         "Edit(./apps/proposals/data/**)",
         "Write(./apps/proposals/data/**)",
@@ -80,7 +80,7 @@
     {
       "tool": "content",
       "filesAdded": 39,
-      "alreadyThere": 94,
+      "alreadyThere": 99,
       "permissionsAdded": [
         "Edit(./apps/content/data/content.json)",
         "Write(./apps/content/data/content.json)",
@@ -92,7 +92,7 @@
     {
       "tool": "money",
       "filesAdded": 38,
-      "alreadyThere": 68,
+      "alreadyThere": 72,
       "permissionsAdded": [
         "Edit(./apps/money/data/**)",
         "Write(./apps/money/data/**)"
@@ -102,7 +102,7 @@
     {
       "tool": "ads",
       "filesAdded": 51,
-      "alreadyThere": 94,
+      "alreadyThere": 99,
       "permissionsAdded": [
         "Edit(./apps/ads/data/ads.json)",
         "Write(./apps/ads/data/ads.json)",

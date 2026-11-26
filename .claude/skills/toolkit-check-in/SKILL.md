@@ -12,6 +12,7 @@ One run keeps every tool up to date. It runs a few times a day, at the times the
 1. Read `apps/toolkit/data/toolkit.json`. Only run the part for a tool whose `tools` entry says `set-up` or `part-done`. A tool that isn't set up yet is skipped quietly.
 2. Work out whether this is the **first run today**: `apps/toolkit/data/toolkit.json` has `lastDailyRun`; if it isn't today's date, this is the first run today.
 3. Work out whether this is a **scheduled run**: the prompt says so ("This is a scheduled run"). Otherwise the person asked for it.
+4. Read `context/goal.md`, so the summary can say how this run moves them towards their goal.
 
 ## Every run
 
@@ -41,4 +42,5 @@ Agentic Skill and Folder Map doesn't check in: it scans when they press Scan aga
 - Each tool's own rules apply to its own part, word for word. Nothing here loosens them: you read and draft, you never send, pay, post, delete or switch anything on.
 - Save every data file safely: read it, change only what you need, write it back, check it reads cleanly.
 - If one part fails (a connection is down, a file won't read), note it, carry on with the rest, and say so in the summary. Never stop the whole run for one tool.
+- Open the summary with one line on progress towards their goal (`context/goal.md`), when this run found something that moves it: "Towards your 3 new clients: Marlow Dental asked for a proposal." Leave that line out when nothing moved it, or when `context/goal.md` isn't filled in.
 - Finish with one short summary across the tools, only what's new: "3 emails need a reply (drafted). Greenway moved to Proposal sent. £1,240 came in. 1 post due today." On a scheduled run with nothing new, say nothing new.

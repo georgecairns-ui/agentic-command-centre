@@ -127,7 +127,8 @@ apps_list = ROOT / "apps/toolkit/app/apps-list.js"
 if apps_list.exists():
     # Each entry's guide is setup/connections/<id>.md
     listed = {i + ".md" for i in re.findall(r"\{ id: \"([a-z0-9-]+)\", name: \"[^\"]+\", group:", apps_list.read_text())}
-    guides = {p.name for p in (ROOT / "setup/connections").glob("*.md")} - {"README.md"}
+    # where-to-click.md is where Connectors are on each Claude plan, not an app (shared version 14)
+    guides = {p.name for p in (ROOT / "setup/connections").glob("*.md")} - {"README.md", "where-to-click.md"}
     for g in sorted(guides - listed):
         bad("the Toolkit's Connections page has no card for setup/connections/%s" % g)
     for g in sorted(listed - guides):

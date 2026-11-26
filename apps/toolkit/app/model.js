@@ -75,6 +75,8 @@
   }
   function conn(d, id) { return shared[id] || { status: "not-connected", how: "", note: "", checked: "" }; }
   function connStatus(d, id) { return conn(d, id).status; }
+  // The words on a status chip: "Waiting on IT" when the row says who it's waiting on (shared version 14)
+  function connLabel(c) { return CONNS.label(c); }
   function tool(d, id) { return d.tools[id] || { status: "not-yet", date: "", note: "" }; }
   function toolStatus(d, id) { return tool(d, id).status; }
 
@@ -114,6 +116,12 @@
     // A row with no card (Other connections): no guide of its own, so connect-a-tool
     checkOther: function (name) { return "Check my " + name + " connection still works and tell me what you can see. Follow .claude/skills/connect-a-tool, then update " + CONN_FILE + "."; },
     fixOther: function (name) { return CONNS.fixPrompt(name); },
+    // Waiting on someone else (their IT team, say): they press this once it's sorted (shared version 14)
+    finish: function (app) { return "I'm ready to finish connecting " + app.name + ". Follow " + guideFile(app) + " and .claude/skills/connect-a-tool (\"Waiting on someone else\"): connect it and prove it, read what setup would have read from it, then update " + CONN_FILE + "."; },
+    finishOther: function (name) { return CONNS.finishPrompt(name); },
+    // Choose where it lives (CR-8) and the 10-minute lesson (CR-7)
+    whereItLives: function () { return "Choose where my toolkit lives. Follow .claude/skills/choose-where-it-lives."; },
+    lesson: function () { return "Show me how to use Claude day to day. Follow the 10-minute lesson in setup/learn-as-you-go.md, with my own tools."; },
     lookAgainOther: function (name) { return "Check whether there's a Claude connector for " + name + " now. Follow .claude/skills/connect-a-tool, then update " + CONN_FILE + "."; },
     connectElse: function () { return "I'd like to connect another app to my toolkit. Ask me which one, then use .claude/skills/connect-a-tool."; },
     // Several apps would do (Gmail or Microsoft 365): Claude asks which one they use
@@ -136,6 +144,7 @@
     const s = connStatus(d, app.id);
     if (s === "connected") return { label: "Check it", prompt: prompt.check(app) };
     if (s === "needs-attention") return { label: "Fix it", prompt: prompt.fix(app) };
+    if (s === "waiting") return { label: "Finish connecting", prompt: prompt.finish(app) };
     if (s === "export-only" || s === "no-connector") return { label: "Look again", prompt: prompt.lookAgain(app) };
     return { label: "Connect", prompt: prompt.connect(app) };
   }
@@ -152,13 +161,14 @@
     });
     L.APPS.forEach(function (a) {
       if (connStatus(d, a.id) === "needs-attention") out.push({ kind: "connection", title: a.name + " needs attention", sub: a.what, label: "Fix it", prompt: prompt.fix(a) });
+      if (connStatus(d, a.id) === "waiting") out.push({ kind: "connection", title: "Finish connecting " + a.name, sub: CONNS.label(conn(d, a.id)) + ". Press this once it's sorted.", label: "Finish connecting", prompt: prompt.finish(a) });
     });
     L.KEY_APPS.forEach(function (need) {
       if (need.tool && ["set-up", "part-done"].indexOf(toolStatus(d, need.tool)) === -1) return;
       const apps = need.anyOf.map(appById);
       const statuses = apps.map(function (a) { return connStatus(d, a.id); });
       // Done, already listed as needing attention, or the person has said they don't use any of them
-      if (statuses.indexOf("connected") !== -1 || statuses.indexOf("needs-attention") !== -1) return;
+      if (statuses.indexOf("connected") !== -1 || statuses.indexOf("needs-attention") !== -1 || statuses.indexOf("waiting") !== -1) return;
       // Read from an export, or there's no Claude connector for it: nothing more to connect (shared v13)
       if (statuses.indexOf("export-only") !== -1 || statuses.indexOf("no-connector") !== -1) return;
       // Their email provider has no Claude connector (a row of its own, such as icloud-mail): nothing more to ask for
@@ -177,7 +187,7 @@
 
   // Connections needing attention first, then connected, then the rest, in list order
   function connectionsByUrgency(d) {
-    const rank = { "needs-attention": 0, "connected": 1, "export-only": 2, "no-connector": 3, "not-connected": 4, "not-used": 5 };
+    const rank = { "needs-attention": 0, "waiting": 1, "connected": 2, "export-only": 3, "no-connector": 4, "not-connected": 5, "not-used": 6 };
     return L.APPS.map(function (a, i) { return { app: a, i: i, status: connStatus(d, a.id) }; })
       .sort(function (x, y) { return rank[x.status] - rank[y.status] || x.i - y.i; });
   }
@@ -192,7 +202,7 @@
 
   window.TK.model = {
     FILE: FILE, CONN: CONN, TOOL: TOOL, validate: validate, appById: appById, toolById: toolById,
-    setConnections: setConnections, setConnectionsProblem: setConnectionsProblem, connectionsProblem: connectionsProblem, extras: extras, conn: conn, connStatus: connStatus, tool: tool, toolStatus: toolStatus, counts: counts, connectedLine: connectedLine, setUpLine: setUpLine,
+    setConnections: setConnections, setConnectionsProblem: setConnectionsProblem, connectionsProblem: connectionsProblem, extras: extras, conn: conn, connStatus: connStatus, connLabel: connLabel, tool: tool, toolStatus: toolStatus, counts: counts, connectedLine: connectedLine, setUpLine: setUpLine,
     newIdeas: newIdeas, builds: builds, toolNames: toolNames, andList: andList, prompt: prompt, connButton: connButton, toolButton: toolButton,
     nextSteps: nextSteps, connectionsByUrgency: connectionsByUrgency, claudeLink: claudeLink
   };
